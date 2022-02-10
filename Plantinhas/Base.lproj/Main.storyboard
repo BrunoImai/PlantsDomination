@@ -444,7 +444,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="yNW-dF-Yeg" firstAttribute="leading" secondItem="dCz-Qu-DLZ" secondAttribute="leading" id="5XO-bV-VzI"/>
                                             <constraint firstItem="yNW-dF-Yeg" firstAttribute="trailing" secondItem="dCz-Qu-DLZ" secondAttribute="trailing" id="T1C-hD-Wlo"/>

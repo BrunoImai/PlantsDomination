@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Shop {
+class Shop: NSObject {
     
     var plantsValue = [String: Double]()
     
@@ -25,7 +25,7 @@ class Shop {
     }
     
     func updatePlantPrice(_ plantName : String, _ oldPrice : Double) {
-        plantsValue[plantName] = oldPrice + oldPrice / 10
+        plantsValue[plantName] = oldPrice + oldPrice / 5
         refreshShop()
     }
     
@@ -171,7 +171,7 @@ class Shop {
             }
     }
     
-    init(){
+    override init(){
         
     }
     

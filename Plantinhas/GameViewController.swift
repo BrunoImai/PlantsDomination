@@ -18,6 +18,10 @@ class GameViewController: UIViewController {
             
             collectionView.dataSource = self
             collectionView.delegate = self
+            
+            GameManager.shared.controller = self
+            
+           
         }
     }
     
@@ -98,6 +102,7 @@ class GameViewController: UIViewController {
         } else {
             emptyShopBannerView.isHidden = true
         }
+
     }
     
     func canPurchase(_ value : Double, _ button : UIButton) {
@@ -158,3 +163,28 @@ extension GameViewController : UICollectionViewDelegateFlowLayout {
         CGSize(width: 125, height: collectionView.frame.height)
     }
 }
+
+extension UIViewController {
+
+func showToast(message : String, font: UIFont) {
+
+    let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 125, y: 0, width: 250, height: 35))
+    toastLabel.backgroundColor = UIColor.white
+    toastLabel.textColor = UIColor.black
+    toastLabel.font = font
+    toastLabel.textAlignment = .center;
+    toastLabel.text = message
+    toastLabel.alpha = 1.0
+    toastLabel.layer.cornerRadius = 10;
+    toastLabel.clipsToBounds  =  true
+    self.view.addSubview(toastLabel)
+    UIView.animate(withDuration: 1.0, delay: 0.1, options: .curveEaseOut, animations: {
+        toastLabel.layer.position.y = 75
+    }, completion: {(isCompleted) in
+        UIView.animate(withDuration: 1.0, delay: 2.5, options: .curveEaseOut, animations: {
+            toastLabel.layer.position.y = -20
+        }, completion: {(isCompleted) in
+            toastLabel.removeFromSuperview()
+        })
+    })
+} }

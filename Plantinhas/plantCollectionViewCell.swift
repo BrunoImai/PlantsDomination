@@ -10,8 +10,7 @@ import UIKit
 class plantCollectionViewCell: UICollectionViewCell {
 
     var plantInCell : Plant? = nil
-    
-    var currentGame: GameScene!
+
     
     @IBOutlet weak var maxWidthLayoutConstraint: NSLayoutConstraint!
     
@@ -43,7 +42,7 @@ class plantCollectionViewCell: UICollectionViewCell {
         plantNameOutlet.text = nil
         oxygenPrice.text = nil
         
-        // Colocar tufo nulo dnv s coisas do awake from inib
+        // Colocar tudo nulo dnv as coisas do awake from inib
     }
 
     func setup(_ plantIndex: Int) {
@@ -58,32 +57,50 @@ class plantCollectionViewCell: UICollectionViewCell {
         numberFormatter.maximumFractionDigits = 1
         let number =  numberFormatter.string(from: NSNumber(value: plantPrice))
         oxygenPrice.text = number
-        canPurchase(plantPrice, buyButton)
+        updateUIBuyButton(plantPrice, buyButton)
         
         maxWidth = 125
-        print(plantPrice, " Index: ", plantIndex)
         // setup recebe os parametros e mudam as coisas
     }
     
-    func canPurchase(_ value : Double, _ button : UIButton) {
+    func updateUIBuyButton(_ value : Double, _ button : UIButton) {
         if value <= GameManager.shared.actualOxygen {
-            if GameManager.shared.gameScene!.plantInScene.count < GameManager.shared.plantLimit {
                 button.backgroundColor = #colorLiteral(red: 0.5792971253, green: 0.8477756381, blue: 0.3774493635, alpha: 1)
-                button.isUserInteractionEnabled = true
-            }
         } else {
             button.backgroundColor = #colorLiteral(red: 0.3489862084, green: 0.3490410447, blue: 0.3489741683, alpha: 1)
-            button.isUserInteractionEnabled = false
         }
     }
-    @IBAction func buyPlant(_ sender: Any) {
+    
+    func canPurchase() -> Bool{
+        
         let plantPrice = GameManager.shared.shop.plantsValue[plantInCell!.name]!
         if plantPrice <= GameManager.shared.actualOxygen {
+            if (GameManager.shared.gameScene?.plantInScene.count)! < GameManager.shared.plantLimit {
+                return true
+            } else {
+                GameManager.shared.controller!.showToast(message: "Limite de plantas na fazenda atingido!", font: .systemFont(ofSize: 12))
+            }
+                
+        } else {
+            print()
+            GameManager.shared.controller!.showToast(message: "Oxigênio insuficiente", font: .systemFont(ofSize: 12))
+                
+            
+        }
+        return false
+    }
+    @IBAction func buyPlant(_ sender: Any) {
+        
+        let plantPrice = GameManager.shared.shop.plantsValue[plantInCell!.name]!
+        if canPurchase() {
             GameManager.shared.actualOxygen -= plantPrice
             GameManager.shared.gameScene?.spawnPlant(plant: plantInCell!)
             GameManager.shared.shop.updatePlantPrice(plantInCell!.name, plantPrice)
+            
         }
-        canPurchase(plantPrice, buyButton)
+            
+        updateUIBuyButton(plantPrice, buyButton)
+        
     }
     
 }

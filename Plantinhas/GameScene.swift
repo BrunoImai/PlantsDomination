@@ -10,6 +10,8 @@ import GameplayKit
 
 class GameScene: SKScene {
     
+    let defaults = UserDefaults.standard
+    
     weak var viewController : GameViewController?
     
     var plantInScene : [Plant] = []
@@ -33,9 +35,40 @@ class GameScene: SKScene {
         run(SKAction.repeatForever(
             SKAction.sequence([
                 SKAction.run(oxygenNumber),
+                SKAction.run(reloadCollectionView),
                 SKAction.wait(forDuration: 1)
             ])
         ))
+        
+        if defaults.bool(forKey: "First Launch happend") == true {
+            print("Segundo uso")
+            viewController?.showToast(message: "Second", font: .systemFont(ofSize: 12))
+            GameManager.shared.actualOxygen = defaults.object(forKey:"actualOxygen") as! Double
+            
+            let decodedPlantsDiscovered = defaults.data(forKey: "plantsDiscovered")
+            GameManager.shared.plantsDiscovered = NSKeyedUnarchiver.unarchiveObject(with: decodedPlantsDiscovered!) as! [Plant]
+            
+            let decodedPlantsInScene = defaults.data(forKey: "plantsInScene")
+            GameManager.shared.gameScene?.plantInScene = NSKeyedUnarchiver.unarchiveObject(with: decodedPlantsInScene!) as! [Plant]
+            
+            GameManager.shared.plantLimit = defaults.object(forKey: "plantLimit") as! Int
+            GameManager.shared.spawnTime = defaults.object(forKey:"spawnTime") as! Double
+            GameManager.shared.oxygenBoost = defaults.object(forKey:"oxygenBoost") as! Double
+            GameManager.shared.oxygenBoostUpgradeValue = defaults.object(forKey: "oxygenBoostUpgradeValue") as! Double
+            GameManager.shared.seedSpawnUpgradeValue = defaults.object(forKey: "seedSpawnUpgradeValue") as! Double
+            GameManager.shared.oxygenBoostUpgradeValue = defaults.object(forKey: "farmLimitUpgradeValue") as! Double
+            
+            GameManager.shared.shop.plantsValue = defaults.object(forKey: "plantsValue") as! [String : Double]
+            
+            for plant in GameManager.shared.gameScene!.plantInScene {
+                addChild(plant.node)
+            }
+            
+            
+        } else {
+            GameManager.shared.save(true, key: "First Launch happend")
+            print("Primeiro uso")
+        }
     }
     
     func touchDown(atPoint pos : CGPoint) {
@@ -46,8 +79,7 @@ class GameScene: SKScene {
         var nodeName = currentNode?.name
         nodeName?.removeLast()
         let maxYtouch = (viewController?.oxygenNumberLabel.frame.maxY)! + (viewController?.view.frame.height)!/2 - 45
-        print(maxYtouch)
-        print(pos.y)
+
         if pos.y < maxYtouch {
             if currentNode != nil && (nodeName == "plant" || nodeName == "plant1"){
                 self.currentNode!.position = pos
@@ -115,6 +147,10 @@ class GameScene: SKScene {
         return random() * (max - min) + min
     }
     
+    func reloadCollectionView( ) {
+        viewController?.collectionView.reloadData()
+    }
+    
     //MARK: Plant Menagement
     
     func seedSpawn() {
@@ -137,7 +173,7 @@ class GameScene: SKScene {
     }
     func spawnFromSeed(_ seed: SKNode) {
         if  plantInScene.count <= GameManager.shared.plantLimit {
-            let plant = Plant(name: "plant1", oxygeProduction: 1.3)
+            let plant = Plant(name: "plant1", oxygeProduction: 1.1)
             plant.node.position = seed.position
         
             GameManager.shared.checkNewPlants(plant)
