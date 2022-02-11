@@ -12,12 +12,30 @@ import GameplayKit
 class GameViewController: UIViewController {
     @IBOutlet weak var emptyShopBannerView: UIView!
     
-    @IBOutlet weak var collectionView: UICollectionView!{
+    @IBOutlet weak var openPlantPediaButton: UIButton!
+    @IBOutlet weak var closePediaButton: UIButton!
+    @IBOutlet weak var plantPedia: UIView!
+    
+    @IBOutlet weak var pediaCollectionView: UICollectionView!{
         didSet {
-            collectionView.register(UINib(nibName: String(describing: plantCollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: plantCollectionViewCell.self))
+            pediaCollectionView.register(UINib(nibName: String(describing: PlantPediaCollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: PlantPediaCollectionViewCell.self))
             
-            collectionView.dataSource = self
-            collectionView.delegate = self
+            pediaCollectionView.dataSource = self
+            pediaCollectionView.delegate = self
+            
+            GameManager.shared.controller = self
+            
+           
+        }
+    }
+    
+    
+    @IBOutlet weak var shopCollectionView: UICollectionView!{
+        didSet {
+            shopCollectionView.register(UINib(nibName: String(describing: plantCollectionViewCell.self), bundle: nil), forCellWithReuseIdentifier: String(describing: plantCollectionViewCell.self))
+            
+            shopCollectionView.dataSource = self
+            shopCollectionView.delegate = self
             
             GameManager.shared.controller = self
             
@@ -126,7 +144,21 @@ class GameViewController: UIViewController {
         shop.isHidden = false
         shadowBackground.isHidden = false
         print("Loja Aberta")
-        collectionView.reloadData()
+        shopCollectionView.reloadData()
+    }
+    @IBAction func closePlantPedia(_ sender: Any) {
+        plantPedia.isHidden = true
+        plantPedia.isUserInteractionEnabled = false
+        closePediaButton.isHidden = true
+        closePediaButton.isUserInteractionEnabled = false
+        shadowBackground.isHidden = true
+    }
+    @IBAction func openPlantPedia(_ sender: Any) {
+        plantPedia.isHidden = false
+        plantPedia.isUserInteractionEnabled = true
+        closePediaButton.isHidden = false
+        closePediaButton.isUserInteractionEnabled = true
+        shadowBackground.isHidden = false
     }
     
     @IBAction func buyLimitUpgrade(_ sender: Any) {
@@ -149,18 +181,34 @@ extension GameViewController : UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
             
+        if collectionView == shopCollectionView {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: plantCollectionViewCell.self), for: indexPath) as? plantCollectionViewCell else {
                 return UICollectionViewCell()
             }
         
             cell.setup(indexPath.item)
             return cell
+            
+        } else {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: PlantPediaCollectionViewCell.self), for: indexPath) as? PlantPediaCollectionViewCell else {
+                return UICollectionViewCell()
+            }
+        
+            cell.setup(indexPath.item)
+            return cell
+        }
     }
 }
 
 extension GameViewController : UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: 125, height: collectionView.frame.height)
+        
+        if collectionView == shopCollectionView {
+            return CGSize(width: 125, height: collectionView.frame.height)
+        }
+        else {
+            return CGSize(width: 250, height: 450)
+        }
     }
 }
 

@@ -21,12 +21,20 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fence" translatesAutoresizingMaskIntoConstraints="NO" id="UN3-Ur-pG3">
                                 <rect key="frame" x="0.0" y="752" width="414" height="145"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jRN-ID-4uQ">
-                                <rect key="frame" x="96" y="765" width="111" height="97"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jRN-ID-4uQ" userLabel="ShopButton">
+                                <rect key="frame" x="80" y="765" width="111" height="97"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="shopButton" title=" "/>
                                 <connections>
                                     <action selector="openShop:" destination="BV1-FR-VrT" eventType="touchUpInside" id="u6e-NH-nb8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gRh-na-oRM" userLabel="PlantpediaButton">
+                                <rect key="frame" x="223" y="765" width="111" height="97"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="plantPedia" title=" "/>
+                                <connections>
+                                    <action selector="openPlantPedia:" destination="BV1-FR-VrT" eventType="touchUpInside" id="oln-ss-eW6"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vg4-Os-7n4" userLabel="oxygenScore">
@@ -480,40 +488,120 @@
                                     <constraint firstAttribute="trailing" secondItem="Zuu-2a-Cxi" secondAttribute="trailing" constant="16" id="f1S-oT-HC9"/>
                                 </constraints>
                             </view>
+                            <view hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="69T-ag-qZM" userLabel="plantpedia">
+                                <rect key="frame" x="20" y="108" width="374" height="690"/>
+                                <subviews>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="SP3-qu-9Y2">
+                                        <rect key="frame" x="32" y="122" width="310" height="536"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="o2G-qQ-7e2">
+                                            <size key="itemSize" width="128" height="128"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="GsD-1U-tDs">
+                                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Soe-Nn-GGv">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </collectionViewCellContentView>
+                                            </collectionViewCell>
+                                        </cells>
+                                    </collectionView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sua coleção de Plantinhas!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lAr-lm-a2r">
+                                        <rect key="frame" x="32" y="69" width="204.5" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.27396270630000003" green="0.34069055320000002" blue="0.87063491339999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plantapédia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A9L-6N-6wI">
+                                        <rect key="frame" x="32" y="32" width="129" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                                        <color key="textColor" red="0.27396270630000003" green="0.34069055320000002" blue="0.87063491339999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="SP3-qu-9Y2" secondAttribute="bottom" constant="32" id="6MP-xI-Ggy"/>
+                                    <constraint firstItem="A9L-6N-6wI" firstAttribute="leading" secondItem="69T-ag-qZM" secondAttribute="leading" constant="32" id="9eq-t4-ttx"/>
+                                    <constraint firstItem="lAr-lm-a2r" firstAttribute="top" secondItem="A9L-6N-6wI" secondAttribute="bottom" constant="8" id="Grs-V2-SJH"/>
+                                    <constraint firstItem="SP3-qu-9Y2" firstAttribute="top" secondItem="lAr-lm-a2r" secondAttribute="bottom" constant="32" id="O2M-mc-rrF"/>
+                                    <constraint firstItem="lAr-lm-a2r" firstAttribute="leading" secondItem="69T-ag-qZM" secondAttribute="leading" constant="32" id="bRY-kO-Dgv"/>
+                                    <constraint firstItem="A9L-6N-6wI" firstAttribute="top" secondItem="69T-ag-qZM" secondAttribute="top" constant="32" id="tfA-yt-kA9"/>
+                                    <constraint firstItem="SP3-qu-9Y2" firstAttribute="leading" secondItem="69T-ag-qZM" secondAttribute="leading" constant="32" id="u3r-u2-Aa0"/>
+                                    <constraint firstAttribute="trailing" secondItem="SP3-qu-9Y2" secondAttribute="trailing" constant="32" id="vnW-bB-P6T"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7aD-Gc-a7P" userLabel="ClosePlantpediaButton">
+                                <rect key="frame" x="334" y="86" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="GTo-6N-YGl"/>
+                                    <constraint firstAttribute="height" constant="44" id="dM9-a6-9al"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="" backgroundImage="close">
+                                    <color key="titleColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="closePlantPedia:" destination="BV1-FR-VrT" eventType="touchUpInside" id="EFQ-MO-Eza"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="69T-ag-qZM" firstAttribute="leading" secondItem="4qk-I5-YsI" secondAttribute="leading" constant="20" id="2XV-on-JXy"/>
                             <constraint firstItem="4qk-I5-YsI" firstAttribute="trailing" secondItem="UN3-Ur-pG3" secondAttribute="trailing" id="CET-h9-Z5I"/>
                             <constraint firstItem="vg4-Os-7n4" firstAttribute="leading" secondItem="4qk-I5-YsI" secondAttribute="leading" constant="32" id="CXW-XS-EA5"/>
                             <constraint firstItem="4qk-I5-YsI" firstAttribute="trailing" secondItem="vg4-Os-7n4" secondAttribute="trailing" constant="32" id="Mhb-0a-gPD"/>
                             <constraint firstItem="vg4-Os-7n4" firstAttribute="top" secondItem="4qk-I5-YsI" secondAttribute="top" id="Ngc-YJ-sj1"/>
+                            <constraint firstItem="69T-ag-qZM" firstAttribute="top" secondItem="4qk-I5-YsI" secondAttribute="top" constant="64" id="QYw-8z-ujg"/>
                             <constraint firstItem="1pg-SV-mli" firstAttribute="leading" secondItem="4qk-I5-YsI" secondAttribute="leading" constant="20" id="S0T-pc-e71"/>
+                            <constraint firstItem="69T-ag-qZM" firstAttribute="trailing" secondItem="4qk-I5-YsI" secondAttribute="trailing" constant="-20" id="TDl-ql-Y2A"/>
                             <constraint firstItem="4qk-I5-YsI" firstAttribute="bottom" secondItem="UN3-Ur-pG3" secondAttribute="bottom" constant="-35" id="XrR-El-gu5"/>
                             <constraint firstItem="UN3-Ur-pG3" firstAttribute="leading" secondItem="4qk-I5-YsI" secondAttribute="leading" id="YGg-k4-3Ah"/>
+                            <constraint firstItem="7aD-Gc-a7P" firstAttribute="top" secondItem="69T-ag-qZM" secondAttribute="top" constant="-22" id="YJL-Wk-CcR"/>
                             <constraint firstItem="1pg-SV-mli" firstAttribute="top" secondItem="4qk-I5-YsI" secondAttribute="top" constant="64" id="f15-2M-8X5"/>
+                            <constraint firstItem="4qk-I5-YsI" firstAttribute="bottom" secondItem="gRh-na-oRM" secondAttribute="bottom" id="h8E-Xh-9uy"/>
                             <constraint firstItem="4qk-I5-YsI" firstAttribute="bottom" secondItem="1pg-SV-mli" secondAttribute="bottom" constant="64" id="id4-Vk-70h"/>
                             <constraint firstItem="jdm-cZ-LzA" firstAttribute="top" secondItem="4qk-I5-YsI" secondAttribute="top" constant="-500" id="k6q-u0-VoT"/>
                             <constraint firstItem="jdm-cZ-LzA" firstAttribute="leading" secondItem="4qk-I5-YsI" secondAttribute="leading" id="meX-By-7Q4"/>
                             <constraint firstItem="4qk-I5-YsI" firstAttribute="trailing" secondItem="jdm-cZ-LzA" secondAttribute="trailing" id="n2e-iN-OMJ"/>
+                            <constraint firstItem="4qk-I5-YsI" firstAttribute="trailing" secondItem="gRh-na-oRM" secondAttribute="trailing" constant="80" id="nmc-4m-RmM"/>
+                            <constraint firstItem="7aD-Gc-a7P" firstAttribute="trailing" secondItem="69T-ag-qZM" secondAttribute="trailing" constant="-16" id="o1K-HR-4sn"/>
+                            <constraint firstItem="69T-ag-qZM" firstAttribute="bottom" secondItem="4qk-I5-YsI" secondAttribute="bottom" constant="-64" id="pjD-Fn-vdJ"/>
                             <constraint firstItem="4qk-I5-YsI" firstAttribute="bottom" secondItem="jRN-ID-4uQ" secondAttribute="bottom" id="qVw-Mu-W64"/>
                             <constraint firstItem="4qk-I5-YsI" firstAttribute="bottom" secondItem="jdm-cZ-LzA" secondAttribute="bottom" constant="-500" id="qXL-YR-N8B"/>
-                            <constraint firstItem="jRN-ID-4uQ" firstAttribute="leading" secondItem="4qk-I5-YsI" secondAttribute="leading" constant="96" id="tYE-ul-nsR"/>
+                            <constraint firstItem="jRN-ID-4uQ" firstAttribute="leading" secondItem="4qk-I5-YsI" secondAttribute="leading" constant="80" id="tYE-ul-nsR"/>
                             <constraint firstItem="4qk-I5-YsI" firstAttribute="trailing" secondItem="1pg-SV-mli" secondAttribute="trailing" constant="20" id="wVd-na-SYo"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="collectionView" destination="0hj-If-hAZ" id="br0-cT-ijr"/>
+                        <outlet property="closePediaButton" destination="7aD-Gc-a7P" id="e6T-YX-gq1"/>
                         <outlet property="emptyShopBannerView" destination="Wew-Sz-dPJ" id="6Up-uj-JLr"/>
                         <outlet property="limitFarmButton" destination="fCk-eh-TeJ" id="PSf-4c-51C"/>
                         <outlet property="limitFarmValueLabel" destination="tQG-ZO-k3C" id="elO-2j-Uy5"/>
+                        <outlet property="openPlantPediaButton" destination="gRh-na-oRM" id="LYE-5a-OT1"/>
                         <outlet property="oxygenBoostButton" destination="aAE-Vy-6uL" id="Is4-Op-8Cr"/>
                         <outlet property="oxygenBoostValueLabel" destination="CA4-hj-xRC" id="5Rr-ME-cMW"/>
                         <outlet property="oxygenNumberLabel" destination="hxo-x4-bLc" id="swy-Tz-8Sp"/>
+                        <outlet property="pediaCollectionView" destination="SP3-qu-9Y2" id="jro-iJ-oKd"/>
+                        <outlet property="plantPedia" destination="69T-ag-qZM" id="IAP-u4-I7f"/>
                         <outlet property="seedSpawnButton" destination="5Yq-D4-Fi3" id="Mre-DU-F5z"/>
                         <outlet property="seedSpawnValueLabel" destination="VDk-a9-JBT" id="gmB-3R-jcW"/>
                         <outlet property="shadowBackground" destination="jdm-cZ-LzA" id="j3J-MC-fpT"/>
                         <outlet property="shop" destination="1pg-SV-mli" id="3e2-Qy-xnY"/>
+                        <outlet property="shopCollectionView" destination="0hj-If-hAZ" id="br0-cT-ijr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
@@ -527,6 +615,7 @@
         <image name="o2" width="82" height="82"/>
         <image name="oxygenUpgradeIcon" width="72" height="67"/>
         <image name="plant1" width="65" height="85"/>
+        <image name="plantPedia" width="83" height="83"/>
         <image name="seedUpgradeIcon" width="89" height="75"/>
         <image name="shopButton" width="83" height="83"/>
         <systemColor name="systemBackgroundColor">

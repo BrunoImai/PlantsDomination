@@ -62,6 +62,7 @@ class GameScene: SKScene {
             
             for plant in GameManager.shared.gameScene!.plantInScene {
                 addChild(plant.node)
+                print(plant.tinyDesc)
             }
             
             
@@ -148,7 +149,8 @@ class GameScene: SKScene {
     }
     
     func reloadCollectionView( ) {
-        viewController?.collectionView.reloadData()
+        viewController?.shopCollectionView.reloadData()
+        viewController?.pediaCollectionView.reloadData()
     }
     
     //MARK: Plant Menagement
@@ -165,6 +167,8 @@ class GameScene: SKScene {
             
             plant.node.position = CGPoint(x: actualX, y: actualY)
             
+            plant.setDesc()
+            
             plantInScene.append(plant)
                         
             addChild(plant.node)
@@ -175,7 +179,8 @@ class GameScene: SKScene {
         if  plantInScene.count <= GameManager.shared.plantLimit {
             let plant = Plant(name: "plant1", oxygeProduction: 1.1)
             plant.node.position = seed.position
-        
+            plant.setDesc()
+            
             GameManager.shared.checkNewPlants(plant)
             
             plantInScene.append(plant)
@@ -194,6 +199,8 @@ class GameScene: SKScene {
             
             newPlant.node.position = CGPoint(x: actualX, y: actualY)
             
+            newPlant.setDesc()
+            
             plantInScene.append(newPlant)
                         
             addChild(newPlant.node)
@@ -207,6 +214,8 @@ class GameScene: SKScene {
             let oxygeProduction = plantValue(father)
         
             let plant = Plant(name: plantType, oxygeProduction: oxygeProduction)
+        
+            plant.setDesc()
             
             plant.node.position = father.node.position
         

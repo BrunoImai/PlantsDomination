@@ -18,6 +18,8 @@
 		0E3D0BF127A206C000266507 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E3D0BF027A206C000266507 /* Assets.xcassets */; };
 		0E3D0BF427A206C000266507 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E3D0BF227A206C000266507 /* LaunchScreen.storyboard */; };
 		0E3D0C1E27A42E1F00266507 /* Plant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3D0C1D27A42E1E00266507 /* Plant.swift */; };
+		0E6D653327B5908D0034EF4A /* PlantPediaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6D653127B5908D0034EF4A /* PlantPediaCollectionViewCell.swift */; };
+		0E6D653427B5908D0034EF4A /* PlantPediaCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E6D653227B5908D0034EF4A /* PlantPediaCollectionViewCell.xib */; };
 		0E8EFBBB27A9685800466722 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8EFBBA27A9685800466722 /* GameManager.swift */; };
 		0E8EFBBD27A9687B00466722 /* Shop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8EFBBC27A9687B00466722 /* Shop.swift */; };
 /* End PBXBuildFile section */
@@ -35,6 +37,8 @@
 		0E3D0BF027A206C000266507 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0E3D0BF327A206C000266507 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0E3D0C1D27A42E1E00266507 /* Plant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plant.swift; sourceTree = "<group>"; };
+		0E6D653127B5908D0034EF4A /* PlantPediaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantPediaCollectionViewCell.swift; sourceTree = "<group>"; };
+		0E6D653227B5908D0034EF4A /* PlantPediaCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlantPediaCollectionViewCell.xib; sourceTree = "<group>"; };
 		0E8EFBBA27A9685800466722 /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
 		0E8EFBBC27A9687B00466722 /* Shop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shop.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -82,6 +86,8 @@
 				0E8EFBBC27A9687B00466722 /* Shop.swift */,
 				0E08B06D27AC6F630059A4B9 /* plantCollectionViewCell.swift */,
 				0E08B06E27AC6F630059A4B9 /* plantCollectionViewCell.xib */,
+				0E6D653127B5908D0034EF4A /* PlantPediaCollectionViewCell.swift */,
+				0E6D653227B5908D0034EF4A /* PlantPediaCollectionViewCell.xib */,
 			);
 			path = Plantinhas;
 			sourceTree = "<group>";
@@ -147,6 +153,7 @@
 				0E3D0BEF27A206BF00266507 /* Main.storyboard in Resources */,
 				0E3D0BE627A206BF00266507 /* GameScene.sks in Resources */,
 				0E3D0BF127A206C000266507 /* Assets.xcassets in Resources */,
+				0E6D653427B5908D0034EF4A /* PlantPediaCollectionViewCell.xib in Resources */,
 				0E3D0BF427A206C000266507 /* LaunchScreen.storyboard in Resources */,
 				0E08B07027AC6F630059A4B9 /* plantCollectionViewCell.xib in Resources */,
 				0E3D0BE827A206BF00266507 /* Actions.sks in Resources */,
@@ -166,6 +173,7 @@
 				0E8EFBBB27A9685800466722 /* GameManager.swift in Sources */,
 				0E8EFBBD27A9687B00466722 /* Shop.swift in Sources */,
 				0E3D0BEC27A206BF00266507 /* GameViewController.swift in Sources */,
+				0E6D653327B5908D0034EF4A /* PlantPediaCollectionViewCell.swift in Sources */,
 				0E3D0BE427A206BE00266507 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
