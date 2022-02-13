@@ -177,7 +177,7 @@ class GameScene: SKScene {
     }
     func spawnFromSeed(_ seed: SKNode) {
         if  plantInScene.count <= GameManager.shared.plantLimit {
-            let plant = Plant(name: "plant1", oxygeProduction: 1.1)
+            let plant = Plant(name: "plant1", oxygeProduction: 0.5)
             plant.node.position = seed.position
             plant.setDesc()
             
@@ -288,7 +288,7 @@ class GameScene: SKScene {
    
     
     func plantValue( _ father: Plant) -> Double {
-        return father.oxygeProduction * 3.2 * GameManager.shared.oxygenBoost
+        return father.oxygeProduction * 2.4 * GameManager.shared.oxygenBoost
     }
     
     func oxygenNumber() {

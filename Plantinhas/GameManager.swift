@@ -33,7 +33,7 @@ class GameManager{
             if plantsAnalyzed.isEmpty {
                 plantsDiscovered.append(newPlant)
                 print("Planta: ", newPlant.name, " descoberta!")
-                shop.setPlantPrice(newPlant.name, newPlant.oxygeProduction * 100)
+                shop.setPlantPrice(newPlant.name, newPlant.oxygeProduction * 250)
         }
     }
     

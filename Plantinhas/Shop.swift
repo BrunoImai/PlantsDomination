@@ -11,10 +11,6 @@ class Shop: NSObject {
     
     var plantsValue = [String: Double]()
     
-//    var oxygenBoostUpgradeValue = 1.0
-//    var farmLimitUpgradeValue = 1.0
-//    var seedSpawnUpgradeValue = 5.0
-//    
     var oxygenBoostUpgradeValue = 10000.0
     var farmLimitUpgradeValue = 10000.0
     var seedSpawnUpgradeValue = 5000.0
