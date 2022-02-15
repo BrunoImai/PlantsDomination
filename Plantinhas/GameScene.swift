@@ -18,10 +18,13 @@ class GameScene: SKScene {
     
     private var currentNode: SKNode?
     private var background: SKSpriteNode?
+    
+    var backgroundMusic: SKAudioNode!
 
     override func didMove(to view: SKView) {
         
         background = self.childNode(withName: "background1") as? SKSpriteNode
+        background?.name = "background"
         background?.isUserInteractionEnabled = true
         background?.zPosition = -1000000000
         
@@ -42,11 +45,15 @@ class GameScene: SKScene {
         
         if defaults.bool(forKey: "First Launch happend") == true {
             print("Segundo uso")
-            viewController?.showToast(message: "Second", font: .systemFont(ofSize: 12))
             GameManager.shared.actualOxygen = defaults.object(forKey:"actualOxygen") as! Double
             
             let decodedPlantsDiscovered = defaults.data(forKey: "plantsDiscovered")
-            GameManager.shared.plantsDiscovered = NSKeyedUnarchiver.unarchiveObject(with: decodedPlantsDiscovered!) as! [Plant]
+            let plants = NSKeyedUnarchiver.unarchiveObject(with: decodedPlantsDiscovered!) as! [Plant]
+            
+            for plant in plants {
+                plant.setDesc()
+                GameManager.shared.plantsDiscovered.append(plant)
+            }
             
             let decodedPlantsInScene = defaults.data(forKey: "plantsInScene")
             GameManager.shared.gameScene?.plantInScene = NSKeyedUnarchiver.unarchiveObject(with: decodedPlantsInScene!) as! [Plant]
@@ -62,6 +69,7 @@ class GameScene: SKScene {
             
             for plant in GameManager.shared.gameScene!.plantInScene {
                 addChild(plant.node)
+                plant.setDesc()
                 print(plant.tinyDesc)
             }
             
@@ -70,20 +78,24 @@ class GameScene: SKScene {
             GameManager.shared.save(true, key: "First Launch happend")
             print("Primeiro uso")
         }
+        
+//        if let musicURL = Bundle.main.url(forResource: "musicFarm", withExtension: "mp3") {
+//            backgroundMusic = SKAudioNode(url: musicURL)
+//            addChild(backgroundMusic)
+//        }
     }
     
     func touchDown(atPoint pos : CGPoint) {
-        
+
     }
     
     func touchMoved(toPoint pos : CGPoint) {
-        var nodeName = currentNode?.name
-        nodeName?.removeLast()
         let maxYtouch = (viewController?.oxygenNumberLabel.frame.maxY)! + (viewController?.view.frame.height)!/2 - 45
 
         if pos.y < maxYtouch {
-            if currentNode != nil && (nodeName == "plant" || nodeName == "plant1"){
+            if currentNode != nil && currentNode!.name != "seed" && currentNode!.name != "background"  {
                 self.currentNode!.position = pos
+                print(currentNode!.name)
             }
         }
     }
@@ -92,7 +104,7 @@ class GameScene: SKScene {
             if currentNode != nil {
                 for plant in plantInScene {
                     if currentNode!.contains(plant.node.position) && currentNode! != plant.node {
-                        if plant.name == currentNode!.name && currentNode!.name != "seed" {
+                        if plant.node.name == currentNode!.name && currentNode!.name != "seed" {
                             collisionBetween(plant, currentNode!)
                             break
                         }
@@ -177,7 +189,9 @@ class GameScene: SKScene {
     }
     func spawnFromSeed(_ seed: SKNode) {
         if  plantInScene.count <= GameManager.shared.plantLimit {
-            let plant = Plant(name: "plant1", oxygeProduction: 0.5)
+
+            let plant = Plant(name: "Brotinho", oxygeProduction: 1.1)
+            
             plant.node.position = seed.position
             plant.setDesc()
             
@@ -191,7 +205,7 @@ class GameScene: SKScene {
     func spawnPlant(plant: Plant) {
         if  plantInScene.count < GameManager.shared.plantLimit {
         
-            let newPlant = Plant(name: plant.name, oxygeProduction: plant.oxygeProduction)
+            let newPlant = Plant(name: plant.name, oxygeProduction: plant.oxygenProduction)
             
             let actualY = random (min: (background?.frame.minY ?? 0) + 250, max: (background?.frame.maxY ?? 0) - 350)
             
@@ -223,7 +237,7 @@ class GameScene: SKScene {
         
             plantInScene.append(plant)
             addChild(plant.node)
-            
+            playEffect("fuse", "wav")
     }
     
     func collisionBetween(_ plant1: Plant, _ plantDragged: SKNode) {
@@ -251,34 +265,34 @@ class GameScene: SKScene {
         switch plantName {
             
             case "seed":
-                return "plant1"
+                return "Brotinho"
             
-            case "plant1":
-                return "plant2"
+            case "Brotinho":
+                return "Brotervilha"
             
-            case "plant2":
-                return "plant3"
+            case "Brotervilha":
+                return "Florervilha"
             
-            case "plant3":
-                return "plant4"
+            case "Florervilha":
+                return "Plantapet"
             
-            case "plant4":
-                return "plant5"
+            case "Plantapet":
+                return "Mangandante"
             
-            case "plant5":
-                return "plant6"
+            case "Mangandante":
+                return "Doidomate"
             
-            case "plant6":
-                return "plant7"
+            case "Doidomate":
+                return "Fazengumelo"
             
-            case "plant7":
-                return "plant8"
+            case "Fazengumelo":
+                return "Cultivanete"
             
-            case "plant8":
-                return "plant9"
+            case "Cultivanete":
+                return "Melanprendiz"
             
-            case "plant9":
-                return "plant10"
+            case "Melanprendiz":
+                return "Magibóbora"
             
             default:
                 return "plant10"
@@ -288,23 +302,42 @@ class GameScene: SKScene {
    
     
     func plantValue( _ father: Plant) -> Double {
-        return father.oxygeProduction * 2.4 * GameManager.shared.oxygenBoost
+
+        return father.oxygenProduction * 2.1 * GameManager.shared.oxygenBoost
+
     }
     
     func oxygenNumber() {
         for plant in plantInScene {
-            GameManager.shared.actualOxygen += plant.oxygeProduction
+            GameManager.shared.actualOxygen += plant.oxygenProduction
         }
         
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .decimal
-        numberFormatter.maximumFractionDigits = 1
+        numberFormatter.maximumFractionDigits = 0
         let number =  numberFormatter.string(from: NSNumber(value: GameManager.shared.actualOxygen))
         viewController?.oxygenNumberLabel.text = number
     }
     
     func getYScale(_ pos : CGFloat) -> Double{
         return (pos / -(view?.frame.maxY)! + 1.0)
+    }
+    
+    func playEffect(_ musicName : String, _ format: String) {
+        var sfx: SKAudioNode!
+        if let musicURL = Bundle.main.url(forResource: musicName, withExtension: format) {
+            sfx = SKAudioNode(url: musicURL)
+            sfx.autoplayLooped = false
+            addChild(sfx)
+            sfx.run(SKAction.sequence([
+                SKAction.wait(forDuration: 0.1),
+                SKAction.run {
+                       // this will start playing the pling once.
+                    sfx.run(SKAction.play())
+                   }
+               ]))
+        }
+        
     }
 }
 

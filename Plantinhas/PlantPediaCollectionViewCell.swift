@@ -49,11 +49,10 @@ class PlantPediaCollectionViewCell: UICollectionViewCell {
         plantDesc.text = plant.desc
         plantTinyDesc.text = plant.tinyDesc
         
-        let plantPrice = GameManager.shared.shop.plantsValue[plant.name]!
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .decimal
-        numberFormatter.maximumFractionDigits = 1
-        let number =  numberFormatter.string(from: NSNumber(value: plantPrice))
+        numberFormatter.maximumFractionDigits = 0
+        let number =  numberFormatter.string(from: NSNumber(value: plant.oxygenProduction))
         
         oxygenValue.text = number
         maxWidth = 250
