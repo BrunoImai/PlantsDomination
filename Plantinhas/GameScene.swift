@@ -45,34 +45,8 @@ class GameScene: SKScene {
         
         if defaults.bool(forKey: "First Launch happend") == true {
             print("Segundo uso")
-            GameManager.shared.actualOxygen = defaults.object(forKey:"actualOxygen") as! Double
             
-            let decodedPlantsDiscovered = defaults.data(forKey: "plantsDiscovered")
-            let plants = NSKeyedUnarchiver.unarchiveObject(with: decodedPlantsDiscovered!) as! [Plant]
-            
-            for plant in plants {
-                plant.setDesc()
-                GameManager.shared.plantsDiscovered.append(plant)
-            }
-            
-            let decodedPlantsInScene = defaults.data(forKey: "plantsInScene")
-            GameManager.shared.gameScene?.plantInScene = NSKeyedUnarchiver.unarchiveObject(with: decodedPlantsInScene!) as! [Plant]
-            
-            GameManager.shared.plantLimit = defaults.object(forKey: "plantLimit") as! Int
-            GameManager.shared.spawnTime = defaults.object(forKey:"spawnTime") as! Double
-            GameManager.shared.oxygenBoost = defaults.object(forKey:"oxygenBoost") as! Double
-            GameManager.shared.oxygenBoostUpgradeValue = defaults.object(forKey: "oxygenBoostUpgradeValue") as! Double
-            GameManager.shared.seedSpawnUpgradeValue = defaults.object(forKey: "seedSpawnUpgradeValue") as! Double
-            GameManager.shared.oxygenBoostUpgradeValue = defaults.object(forKey: "farmLimitUpgradeValue") as! Double
-            
-            GameManager.shared.shop.plantsValue = defaults.object(forKey: "plantsValue") as! [String : Double]
-            
-            for plant in GameManager.shared.gameScene!.plantInScene {
-                addChild(plant.node)
-                plant.setDesc()
-                print(plant.tinyDesc)
-            }
-            
+            loadGame()
             
         } else {
             GameManager.shared.save(true, key: "First Launch happend")
@@ -95,7 +69,7 @@ class GameScene: SKScene {
         if pos.y < maxYtouch {
             if currentNode != nil && currentNode!.name != "seed" && currentNode!.name != "background"  {
                 self.currentNode!.position = pos
-                print(currentNode!.name)
+                print(currentNode!.name!)
             }
         }
     }
@@ -336,6 +310,36 @@ class GameScene: SKScene {
                     sfx.run(SKAction.play())
                    }
                ]))
+        }
+    }
+    
+    func loadGame() {
+        GameManager.shared.actualOxygen = defaults.object(forKey:"actualOxygen") as! Double
+        
+        let decodedPlantsDiscovered = defaults.data(forKey: "plantsDiscovered")
+        let plants = NSKeyedUnarchiver.unarchiveObject(with: decodedPlantsDiscovered!) as! [Plant]
+        
+        for plant in plants {
+            plant.setDesc()
+            GameManager.shared.plantsDiscovered.append(plant)
+        }
+        
+        let decodedPlantsInScene = defaults.data(forKey: "plantsInScene")
+        GameManager.shared.gameScene?.plantInScene = NSKeyedUnarchiver.unarchiveObject(with: decodedPlantsInScene!) as! [Plant]
+        
+        GameManager.shared.plantLimit = defaults.object(forKey: "plantLimit") as! Int
+        GameManager.shared.spawnTime = defaults.object(forKey:"spawnTime") as! Double
+        GameManager.shared.oxygenBoost = defaults.object(forKey:"oxygenBoost") as! Double
+        GameManager.shared.oxygenBoostUpgradeValue = defaults.object(forKey: "oxygenBoostUpgradeValue") as! Double
+        GameManager.shared.seedSpawnUpgradeValue = defaults.object(forKey: "seedSpawnUpgradeValue") as! Double
+        GameManager.shared.oxygenBoostUpgradeValue = defaults.object(forKey: "farmLimitUpgradeValue") as! Double
+        
+        GameManager.shared.shop.plantsValue = defaults.object(forKey: "plantsValue") as! [String : Double]
+        
+        for plant in GameManager.shared.gameScene!.plantInScene {
+            addChild(plant.node)
+            plant.setDesc()
+            print(plant.tinyDesc)
         }
         
     }
