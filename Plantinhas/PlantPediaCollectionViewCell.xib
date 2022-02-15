@@ -33,9 +33,9 @@
                                 <color key="textColor" red="0.27396270630000003" green="0.34069055320000002" blue="0.87063491339999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="stn-BW-0hx" userLabel="plantTinyDesc">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="stn-BW-0hx" userLabel="plantTinyDesc">
                                 <rect key="frame" x="112" y="58.5" width="102" height="14.5"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="12"/>
                                 <color key="textColor" red="0.27396270630000003" green="0.34069055320000002" blue="0.87063491339999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -71,8 +71,8 @@
                                     <constraint firstAttribute="width" constant="26" id="op7-4Q-uoQ"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PKg-Hz-2Xw">
-                                <rect key="frame" x="36" y="162" width="178" height="253"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PKg-Hz-2Xw">
+                                <rect key="frame" x="36" y="154" width="178" height="269"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" red="0.27396270630000003" green="0.34069055320000002" blue="0.87063491339999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
@@ -94,9 +94,9 @@
                             <constraint firstItem="ac7-bq-siE" firstAttribute="leading" secondItem="auT-UO-Hpc" secondAttribute="trailing" constant="16" id="adf-Pp-gKa"/>
                             <constraint firstAttribute="trailing" secondItem="ac7-bq-siE" secondAttribute="trailing" constant="36" id="aes-z8-nj6"/>
                             <constraint firstItem="cVM-Po-e6g" firstAttribute="top" secondItem="stn-BW-0hx" secondAttribute="bottom" constant="8" symbolic="YES" id="bs3-Cu-f50"/>
-                            <constraint firstAttribute="bottom" secondItem="PKg-Hz-2Xw" secondAttribute="bottom" constant="36" id="df7-Bh-rvB"/>
+                            <constraint firstAttribute="bottom" secondItem="PKg-Hz-2Xw" secondAttribute="bottom" constant="28" id="df7-Bh-rvB"/>
                             <constraint firstItem="auT-UO-Hpc" firstAttribute="leading" secondItem="s8H-fE-497" secondAttribute="leading" constant="36" id="dvw-wO-lX2"/>
-                            <constraint firstItem="PKg-Hz-2Xw" firstAttribute="top" secondItem="auT-UO-Hpc" secondAttribute="bottom" constant="36" id="jTD-pE-WHO"/>
+                            <constraint firstItem="PKg-Hz-2Xw" firstAttribute="top" secondItem="auT-UO-Hpc" secondAttribute="bottom" constant="28" id="jTD-pE-WHO"/>
                             <constraint firstItem="X4m-l9-Via" firstAttribute="centerY" secondItem="cVM-Po-e6g" secondAttribute="centerY" id="jTe-m4-WxW"/>
                             <constraint firstItem="auT-UO-Hpc" firstAttribute="top" secondItem="s8H-fE-497" secondAttribute="top" constant="26" id="lTp-Ie-ygU"/>
                         </constraints>

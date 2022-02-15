@@ -54,7 +54,7 @@ class plantCollectionViewCell: UICollectionViewCell {
         let plantPrice = GameManager.shared.shop.plantsValue[plant.name]!
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .decimal
-        numberFormatter.maximumFractionDigits = 1
+        numberFormatter.maximumFractionDigits = 0
         let number =  numberFormatter.string(from: NSNumber(value: plantPrice))
         oxygenPrice.text = number
         updateUIBuyButton(plantPrice, buyButton)
@@ -96,6 +96,7 @@ class plantCollectionViewCell: UICollectionViewCell {
             GameManager.shared.actualOxygen -= plantPrice
             GameManager.shared.gameScene?.spawnPlant(plant: plantInCell!)
             GameManager.shared.shop.updatePlantPrice(plantInCell!.name, plantPrice)
+            GameManager.shared.gameScene?.playEffect("buy", "wav")
             
         }
             

@@ -12,9 +12,17 @@ import GameplayKit
 class GameViewController: UIViewController {
     @IBOutlet weak var emptyShopBannerView: UIView!
     
+    @IBOutlet weak var newPlantView: UIView!
     @IBOutlet weak var openPlantPediaButton: UIButton!
     @IBOutlet weak var closePediaButton: UIButton!
     @IBOutlet weak var plantPedia: UIView!
+    
+    @IBOutlet weak var newPlantImage: UIImageView!
+    @IBOutlet weak var newPlantName: UILabel!
+    @IBOutlet weak var newPlantTinyDesc: UILabel!
+    @IBOutlet weak var oxygenProduction: UILabel!
+    @IBOutlet weak var newPlantDesc: UILabel!
+    @IBOutlet weak var closeNewPlantsButton: UIButton!
     
     @IBOutlet weak var pediaCollectionView: UICollectionView!{
         didSet {
@@ -101,6 +109,24 @@ class GameViewController: UIViewController {
         return true
     }
     
+    func setPlantAchived(_ plant : Plant) {
+        newPlantDesc.text = plant.desc
+        newPlantName.text = plant.name
+        newPlantTinyDesc.text = plant.tinyDesc
+        
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        numberFormatter.maximumFractionDigits = 0
+        let number =  numberFormatter.string(from: NSNumber(value: plant.oxygenProduction))
+        oxygenProduction.text = number
+        newPlantImage.image = UIImage.init(named: plant.name)
+        
+        newPlantView.isHidden = false
+        closeNewPlantsButton.isHidden = false
+        closeNewPlantsButton.isUserInteractionEnabled = true
+        
+    }
+    
     func updateShopUI() {
         
         let farmLimitUpgradeValue = GameManager.shared.shop.farmLimitUpgradeValue
@@ -163,13 +189,24 @@ class GameViewController: UIViewController {
     
     @IBAction func buyLimitUpgrade(_ sender: Any) {
         GameManager.shared.shop.farmLimitUpgrade()
+        
     }
     @IBAction func buySeedSpawnUpgrade(_ sender: Any) {
         GameManager.shared.shop.seedSpawnTimeUpgrade()
+
     }
     @IBAction func buyOxygenBoostUpgrade(_ sender: Any) {
         GameManager.shared.shop.oxygenBoostUpgrade()
+
     }
+    
+    @IBAction func closeNewPlant(_ sender: Any) {
+        newPlantView.isHidden = true
+        closeNewPlantsButton.isHidden = true
+        closeNewPlantsButton.isUserInteractionEnabled = false
+    }
+    
+    
     @IBAction func buyPlantsUpgrade(_ sender: Any) {
     }
     

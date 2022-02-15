@@ -22,6 +22,10 @@
 		0E6D653427B5908D0034EF4A /* PlantPediaCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E6D653227B5908D0034EF4A /* PlantPediaCollectionViewCell.xib */; };
 		0E8EFBBB27A9685800466722 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8EFBBA27A9685800466722 /* GameManager.swift */; };
 		0E8EFBBD27A9687B00466722 /* Shop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8EFBBC27A9687B00466722 /* Shop.swift */; };
+		0EED4C3E27BA97F40054FE04 /* musicFarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0EED4C3D27BA97F40054FE04 /* musicFarm.mp3 */; };
+		0EED4C4027BA9FF50054FE04 /* buy.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0EED4C3F27BA9FF50054FE04 /* buy.wav */; };
+		0EED4C4227BA9FFA0054FE04 /* fuse.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0EED4C4127BA9FFA0054FE04 /* fuse.wav */; };
+		0EF40D4B27B92ED700DA3C9A /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EF40D4A27B92ED700DA3C9A /* GameKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +45,10 @@
 		0E6D653227B5908D0034EF4A /* PlantPediaCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlantPediaCollectionViewCell.xib; sourceTree = "<group>"; };
 		0E8EFBBA27A9685800466722 /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
 		0E8EFBBC27A9687B00466722 /* Shop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shop.swift; sourceTree = "<group>"; };
+		0EED4C3D27BA97F40054FE04 /* musicFarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = musicFarm.mp3; sourceTree = "<group>"; };
+		0EED4C3F27BA9FF50054FE04 /* buy.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = buy.wav; sourceTree = "<group>"; };
+		0EED4C4127BA9FFA0054FE04 /* fuse.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = fuse.wav; sourceTree = "<group>"; };
+		0EF40D4A27B92ED700DA3C9A /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0EF40D4B27B92ED700DA3C9A /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +68,7 @@
 			children = (
 				0E3D0BE227A206BE00266507 /* Plantinhas */,
 				0E3D0BE127A206BE00266507 /* Products */,
+				0EF40D4927B92ED700DA3C9A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -88,8 +98,19 @@
 				0E08B06E27AC6F630059A4B9 /* plantCollectionViewCell.xib */,
 				0E6D653127B5908D0034EF4A /* PlantPediaCollectionViewCell.swift */,
 				0E6D653227B5908D0034EF4A /* PlantPediaCollectionViewCell.xib */,
+				0EED4C3D27BA97F40054FE04 /* musicFarm.mp3 */,
+				0EED4C3F27BA9FF50054FE04 /* buy.wav */,
+				0EED4C4127BA9FFA0054FE04 /* fuse.wav */,
 			);
 			path = Plantinhas;
+			sourceTree = "<group>";
+		};
+		0EF40D4927B92ED700DA3C9A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0EF40D4A27B92ED700DA3C9A /* GameKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,7 +173,10 @@
 			files = (
 				0E3D0BEF27A206BF00266507 /* Main.storyboard in Resources */,
 				0E3D0BE627A206BF00266507 /* GameScene.sks in Resources */,
+				0EED4C3E27BA97F40054FE04 /* musicFarm.mp3 in Resources */,
+				0EED4C4027BA9FF50054FE04 /* buy.wav in Resources */,
 				0E3D0BF127A206C000266507 /* Assets.xcassets in Resources */,
+				0EED4C4227BA9FFA0054FE04 /* fuse.wav in Resources */,
 				0E6D653427B5908D0034EF4A /* PlantPediaCollectionViewCell.xib in Resources */,
 				0E3D0BF427A206C000266507 /* LaunchScreen.storyboard in Resources */,
 				0E08B07027AC6F630059A4B9 /* plantCollectionViewCell.xib in Resources */,
@@ -328,6 +352,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = gamekit;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -357,6 +382,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiredDeviceCapabilities = gamekit;
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

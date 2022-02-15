@@ -33,13 +33,16 @@ class GameManager{
             if plantsAnalyzed.isEmpty {
                 plantsDiscovered.append(newPlant)
                 print("Planta: ", newPlant.name, " descoberta!")
-                shop.setPlantPrice(newPlant.name, newPlant.oxygeProduction * 100)
+                shop.setPlantPrice(newPlant.name, newPlant.oxygenProduction * 100)
+                controller?.setPlantAchived(newPlant)
+                
         }
     }
     
     static let shared = GameManager()
     
     private init(){}
+    
     
 //MARK: Data Persistence
     

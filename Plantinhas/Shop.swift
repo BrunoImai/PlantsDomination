@@ -39,6 +39,7 @@ class Shop: NSObject {
                 GameManager.shared.spawnTime -= 0.5
                 seedSpawnUpgradeValue = setSeedSpawnUpgradeValue()
                 refreshShop()
+                GameManager.shared.gameScene?.playEffect("buy", "wav")
             }
         }else {
             print("Oxigenio insuficiente")
@@ -55,6 +56,7 @@ class Shop: NSObject {
                 GameManager.shared.plantLimit += 1
                 farmLimitUpgradeValue = setFarmLimitUpgradeValue(GameManager.shared.plantLimit)
                 refreshShop()
+                GameManager.shared.gameScene?.playEffect("buy", "wav")
             }
         }else {
             print("Oxigenio insuficiente")
@@ -72,6 +74,7 @@ class Shop: NSObject {
                 GameManager.shared.oxygenBoost += 0.25
                 oxygenBoostUpgradeValue = setOxygenBoostUpgradeValue()
                 refreshShop()
+                GameManager.shared.gameScene?.playEffect("buy", "wav")
             }
         }else {
             print("Oxigenio insuficiente")
