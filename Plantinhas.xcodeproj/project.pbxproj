@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B28C55C27B58E6900293048 /* On boarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0B28C55B27B58E6900293048 /* On boarding.storyboard */; };
+		0B28C55E27B5914000293048 /* OnBoardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B28C55D27B5914000293048 /* OnBoardingViewController.swift */; };
+		0B28C56027B598D500293048 /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B28C55F27B598D500293048 /* OnboardingSlide.swift */; };
+		0B28C56427B59DFC00293048 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B28C56327B59DFC00293048 /* OnboardingCollectionViewCell.swift */; };
 		0E08B06F27AC6F630059A4B9 /* plantCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E08B06D27AC6F630059A4B9 /* plantCollectionViewCell.swift */; };
 		0E08B07027AC6F630059A4B9 /* plantCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E08B06E27AC6F630059A4B9 /* plantCollectionViewCell.xib */; };
 		0E3D0BE427A206BE00266507 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3D0BE327A206BE00266507 /* AppDelegate.swift */; };
@@ -29,6 +33,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B28C55B27B58E6900293048 /* On boarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "On boarding.storyboard"; sourceTree = "<group>"; };
+		0B28C55D27B5914000293048 /* OnBoardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingViewController.swift; sourceTree = "<group>"; tabWidth = 4; };
+		0B28C55F27B598D500293048 /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
+		0B28C56327B59DFC00293048 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		0E08B06D27AC6F630059A4B9 /* plantCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = plantCollectionViewCell.swift; sourceTree = "<group>"; };
 		0E08B06E27AC6F630059A4B9 /* plantCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = plantCollectionViewCell.xib; sourceTree = "<group>"; };
 		0E3D0BE027A206BE00266507 /* Plant Domination.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Plant Domination.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,9 +71,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B28C56527B69E0D00293048 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				0B28C55F27B598D500293048 /* OnboardingSlide.swift */,
+				0B28C55D27B5914000293048 /* OnBoardingViewController.swift */,
+				0B28C56327B59DFC00293048 /* OnboardingCollectionViewCell.swift */,
+				0B28C55B27B58E6900293048 /* On boarding.storyboard */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 		0E3D0BD727A206BE00266507 = {
 			isa = PBXGroup;
 			children = (
+				0B28C56527B69E0D00293048 /* Onboarding */,
 				0E3D0BE227A206BE00266507 /* Plantinhas */,
 				0E3D0BE127A206BE00266507 /* Products */,
 				0EF40D4927B92ED700DA3C9A /* Frameworks */,
@@ -171,6 +191,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0B28C55C27B58E6900293048 /* On boarding.storyboard in Resources */,
 				0E3D0BEF27A206BF00266507 /* Main.storyboard in Resources */,
 				0E3D0BE627A206BF00266507 /* GameScene.sks in Resources */,
 				0EED4C3E27BA97F40054FE04 /* musicFarm.mp3 in Resources */,
@@ -194,10 +215,15 @@
 				0E3D0BEA27A206BF00266507 /* GameScene.swift in Sources */,
 				0E08B06F27AC6F630059A4B9 /* plantCollectionViewCell.swift in Sources */,
 				0E3D0C1E27A42E1F00266507 /* Plant.swift in Sources */,
+				0B28C55E27B5914000293048 /* OnBoardingViewController.swift in Sources */,
 				0E8EFBBB27A9685800466722 /* GameManager.swift in Sources */,
 				0E8EFBBD27A9687B00466722 /* Shop.swift in Sources */,
 				0E3D0BEC27A206BF00266507 /* GameViewController.swift in Sources */,
 				0E6D653327B5908D0034EF4A /* PlantPediaCollectionViewCell.swift in Sources */,
+
+				0B28C56427B59DFC00293048 /* OnboardingCollectionViewCell.swift in Sources */,
+				0B28C56027B598D500293048 /* OnboardingSlide.swift in Sources */,
+                
 				0E3D0BE427A206BE00266507 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
