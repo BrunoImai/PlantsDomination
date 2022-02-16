@@ -377,7 +377,7 @@
                                                     </label>
                                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="0hj-If-hAZ">
                                                         <rect key="frame" x="16" y="69" width="342" height="218"/>
-                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="218" id="kH7-pr-B3J"/>
                                                         </constraints>
@@ -524,7 +524,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="SP3-qu-9Y2" secondAttribute="bottom" constant="32" id="6MP-xI-Ggy"/>
                                     <constraint firstItem="A9L-6N-6wI" firstAttribute="leading" secondItem="69T-ag-qZM" secondAttribute="leading" constant="32" id="9eq-t4-ttx"/>
@@ -655,7 +655,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="cz2-Zx-17k" secondAttribute="trailing" constant="16" id="7T3-18-WUs"/>
                                     <constraint firstItem="QY6-H8-hAq" firstAttribute="top" secondItem="ah2-Zi-8uo" secondAttribute="top" constant="36" id="86H-Pi-oOh"/>
