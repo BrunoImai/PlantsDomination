@@ -51,6 +51,7 @@ class GameScene: SKScene {
         } else {
             GameManager.shared.save(true, key: "First Launch happend")
             print("Primeiro uso")
+
         }
         
 //        if let musicURL = Bundle.main.url(forResource: "musicFarm", withExtension: "mp3") {

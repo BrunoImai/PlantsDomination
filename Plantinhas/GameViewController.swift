@@ -210,6 +210,12 @@ class GameViewController: UIViewController {
     @IBAction func buyPlantsUpgrade(_ sender: Any) {
     }
     
+    func loadOnboarding() {
+        let vc = self.storyboard!.instantiateViewController(withIdentifier: "Onboarding")
+        self.navigationController?.pushViewController(vc, animated: true)
+        self.present(vc, animated: true, completion: nil)
+    }
+    
 }
 
 extension GameViewController : UICollectionViewDataSource {

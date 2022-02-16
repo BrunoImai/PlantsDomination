@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sk1-9I-EiH">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--On Boarding View Controller-->
+        <scene sceneID="Iem-mC-P7h">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jvf-7T-uqU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="Onboarding" id="sk1-9I-EiH" customClass="OnBoardingViewController" customModule="Plant_Domination" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="No0-ME-5lE">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ZN-bW-T6P">
+                                <rect key="frame" x="132" y="772" width="150" height="50"/>
+                                <color key="backgroundColor" red="0.4711903657" green="0.71523822619999999" blue="0.44576989589999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="3eX-SI-lUu"/>
+                                    <constraint firstAttribute="height" constant="50" id="drG-eP-78F"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Próximo">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="nextButtonClicked:" destination="sk1-9I-EiH" eventType="touchUpInside" id="2ya-7z-CIY"/>
+                                </connections>
+                            </button>
+                            <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="cpk-Oq-xV3">
+                                <rect key="frame" x="149.5" y="730" width="115.5" height="26"/>
+                                <color key="pageIndicatorTintColor" systemColor="systemGray2Color"/>
+                                <color key="currentPageIndicatorTintColor" red="0.4711903657" green="0.71523822619999999" blue="0.44576989589999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </pageControl>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ag4-eu-StV">
+                                <rect key="frame" x="0.0" y="21" width="414" height="686"/>
+                                <color key="backgroundColor" red="0.26274509800000001" green="0.36078431370000003" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="1Gm-mH-EsO">
+                                    <size key="itemSize" width="414" height="674"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="OnboardingCollectionViewCell" id="lm8-bl-DRi" customClass="OnboardingCollectionViewCell" customModule="Plant_Domination" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="6" width="414" height="674"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="wqB-HR-dup">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="674"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5is-of-DGf">
+                                                    <rect key="frame" x="64" y="201" width="286" height="281"/>
+                                                    <color key="backgroundColor" red="0.26274509800000001" green="0.36078431370000003" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="236" id="GZw-D9-sX2"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="hn7-LL-V2l">
+                                                    <rect key="frame" x="57" y="490" width="300" height="125"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Plant Domination" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1RO-JK-fqa">
+                                                            <rect key="frame" x="0.0" y="0.0" width="300" height="60.5"/>
+                                                            <color key="backgroundColor" red="0.26274509800000001" green="0.36078431370000003" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="highlightedColor" red="0.26274509800000001" green="0.36078431370000003" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Domine o mundo conquistando fazendas com suas plantas mutante!" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Grg-Bd-eBj">
+                                                            <rect key="frame" x="0.0" y="60.5" width="300" height="64.5"/>
+                                                            <color key="backgroundColor" red="0.26274509800000001" green="0.36078431370000003" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="300" id="25N-4w-YGp"/>
+                                                        <constraint firstAttribute="height" constant="125" id="gj4-eb-7zU"/>
+                                                    </constraints>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="hn7-LL-V2l" firstAttribute="top" secondItem="5is-of-DGf" secondAttribute="bottom" constant="8" id="Dyu-xF-pre"/>
+                                                <constraint firstItem="hn7-LL-V2l" firstAttribute="centerX" secondItem="5is-of-DGf" secondAttribute="centerX" id="LJZ-Fm-unQ"/>
+                                                <constraint firstItem="5is-of-DGf" firstAttribute="top" secondItem="wqB-HR-dup" secondAttribute="top" constant="201" id="OR1-bI-edA"/>
+                                                <constraint firstAttribute="trailing" secondItem="5is-of-DGf" secondAttribute="trailing" constant="64" id="XGa-Oz-hwm"/>
+                                                <constraint firstItem="5is-of-DGf" firstAttribute="leading" secondItem="wqB-HR-dup" secondAttribute="leading" constant="64" id="m4J-9Y-fmn"/>
+                                                <constraint firstAttribute="bottom" secondItem="hn7-LL-V2l" secondAttribute="bottom" constant="59" id="wTS-7W-YCP"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="414" height="674"/>
+                                        <connections>
+                                            <outlet property="slideDescriptionLabel" destination="Grg-Bd-eBj" id="z6v-o6-Tig"/>
+                                            <outlet property="slideImageView" destination="5is-of-DGf" id="Jkv-OY-728"/>
+                                            <outlet property="slideTitleLabel" destination="1RO-JK-fqa" id="ezM-NZ-agZ"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="FjF-EV-u9b"/>
+                        <color key="backgroundColor" red="0.26274509800000001" green="0.36078431370000003" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="ag4-eu-StV" firstAttribute="leading" secondItem="FjF-EV-u9b" secondAttribute="leading" id="5sf-44-PrE"/>
+                            <constraint firstItem="FjF-EV-u9b" firstAttribute="bottom" secondItem="0ZN-bW-T6P" secondAttribute="bottom" constant="40" id="Hvb-dq-cCu"/>
+                            <constraint firstItem="0ZN-bW-T6P" firstAttribute="centerX" secondItem="FjF-EV-u9b" secondAttribute="centerX" id="N7r-zw-OVb"/>
+                            <constraint firstItem="ag4-eu-StV" firstAttribute="centerX" secondItem="cpk-Oq-xV3" secondAttribute="centerX" id="QeR-32-TAK"/>
+                            <constraint firstItem="cpk-Oq-xV3" firstAttribute="top" secondItem="ag4-eu-StV" secondAttribute="bottom" constant="23" id="Wcl-4M-zTx"/>
+                            <constraint firstItem="ag4-eu-StV" firstAttribute="top" secondItem="FjF-EV-u9b" secondAttribute="top" constant="-23" id="kgr-cq-Nsn"/>
+                            <constraint firstItem="0ZN-bW-T6P" firstAttribute="top" secondItem="cpk-Oq-xV3" secondAttribute="bottom" constant="16" id="tfc-2R-BGD"/>
+                            <constraint firstItem="cpk-Oq-xV3" firstAttribute="centerX" secondItem="FjF-EV-u9b" secondAttribute="centerX" id="xWZ-Gi-PVa"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="ag4-eu-StV" id="pBT-Cj-7wq"/>
+                        <outlet property="nextButton" destination="0ZN-bW-T6P" id="0yA-dS-Bgl"/>
+                        <outlet property="pageControl" destination="cpk-Oq-xV3" id="Umw-5b-NxG"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="-710.14492753623199" y="97.767857142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

@@ -24,20 +24,20 @@ class OnBoardingViewController: UIViewController {
         }
     }
     
-    var slides: [OnboardingSlide] = [
-        
-        OnboardingSlide(title:"Plant Domination", description:"Olá fazendeiro! Domine o mundo e conquiste novas fazendas  com suas plantas mutantes", image:#imageLiteral(resourceName: "plant3.pdf")),
-        
-        OnboardingSlide(title:"As sementes mágicas vão surgir", description:"Clique nelas para as primeiras plantas brotarem", image:#imageLiteral(resourceName: "seedUpgradeIcon.pdf")),
-        
-        OnboardingSlide(title:"Arrate e junte", description:"as plantas iguais para formar novas mutações de plantas que geram mais oxigenio. Quanto mais plantas mais o mundo será dominado!", image:#imageLiteral(resourceName: "plant4.pdf")),
-    
-    ]
+    var slides: [OnboardingSlide] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
+        slides =  [
+            
+            OnboardingSlide(title:"Plant Domination", description:"Olá fazendeiro! Domine o mundo e conquiste novas fazendas  com suas plantas mutantes", image: UIImage.init(named: "Brotinho")!),
+            
+            OnboardingSlide(title:"As sementes mágicas vão surgir", description:"Clique nelas para as primeiras plantas brotarem", image: UIImage.init(named: "Brotinho")!),
+            
+            OnboardingSlide(title:"Arrate e junte", description:"as plantas iguais para formar novas mutações de plantas que geram mais oxigenio. Quanto mais plantas mais o mundo será dominado!", image: UIImage.init(named: "Brotinho")!),
+        
+        ]
         collectionView.delegate = self
         collectionView.dataSource = self
         
@@ -48,7 +48,10 @@ class OnBoardingViewController: UIViewController {
         print("clicou")
         if currentPage == slides.count - 1 {
         
-            _ = storyboard? .instantiateViewController(withIdentifier: "GameViewController") as! UINavigationController
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "GameViewController")
+            self.navigationController?.pushViewController(vc, animated: true)
+            self.present(vc, animated: true, completion: nil)
             
         } else {
             currentPage += 1

@@ -14,7 +14,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        if(UserDefaults.standard.bool(forKey: "notFirstInApp") == false){
+            UserDefaults.standard.set(true, forKey: "notFirstInApp")
+            let storyboard = UIStoryboard(name: "Onboarding", bundle: nil)
+                let viewController = storyboard.instantiateViewController(withIdentifier: "Onboarding")
+                self.window?.rootViewController = viewController
+                self.window?.makeKeyAndVisible()
+        }else{
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let viewController = storyboard.instantiateViewController(withIdentifier: "GameViewController")
+                self.window?.rootViewController = viewController
+                self.window?.makeKeyAndVisible()
+        }
+        
+        
         return true
     }
 
