@@ -25,6 +25,8 @@
 		0E6D653427B5908D0034EF4A /* PlantPediaCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E6D653227B5908D0034EF4A /* PlantPediaCollectionViewCell.xib */; };
 		0E8EFBBB27A9685800466722 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8EFBBA27A9685800466722 /* GameManager.swift */; };
 		0E8EFBBD27A9687B00466722 /* Shop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8EFBBC27A9687B00466722 /* Shop.swift */; };
+		0EE0847627BECB7A0030C389 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EE0847527BECB7A0030C389 /* AdSupport.framework */; };
+		0EE0847827BECB870030C389 /* AppTrackingTransparency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EE0847727BECB870030C389 /* AppTrackingTransparency.framework */; };
 		0EED4C3E27BA97F40054FE04 /* musicFarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0EED4C3D27BA97F40054FE04 /* musicFarm.mp3 */; };
 		0EED4C4027BA9FF50054FE04 /* buy.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0EED4C3F27BA9FF50054FE04 /* buy.wav */; };
 		0EED4C4227BA9FFA0054FE04 /* fuse.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0EED4C4127BA9FFA0054FE04 /* fuse.wav */; };
@@ -53,6 +55,9 @@
 		0E6D653227B5908D0034EF4A /* PlantPediaCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlantPediaCollectionViewCell.xib; sourceTree = "<group>"; };
 		0E8EFBBA27A9685800466722 /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
 		0E8EFBBC27A9687B00466722 /* Shop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shop.swift; sourceTree = "<group>"; };
+		0EE0847527BECB7A0030C389 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		0EE0847727BECB870030C389 /* AppTrackingTransparency.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppTrackingTransparency.framework; path = System/Library/Frameworks/AppTrackingTransparency.framework; sourceTree = SDKROOT; };
+		0EE0847927BECC680030C389 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		0EED4C3D27BA97F40054FE04 /* musicFarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = musicFarm.mp3; sourceTree = "<group>"; };
 		0EED4C3F27BA9FF50054FE04 /* buy.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = buy.wav; sourceTree = "<group>"; };
 		0EED4C4127BA9FFA0054FE04 /* fuse.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = fuse.wav; sourceTree = "<group>"; };
@@ -69,7 +74,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0EF40D4B27B92ED700DA3C9A /* GameKit.framework in Frameworks */,
+				0EE0847827BECB870030C389 /* AppTrackingTransparency.framework in Frameworks */,
 				650A67648ACE1BE828F3A7D4 /* Pods_Plantinhas.framework in Frameworks */,
+				0EE0847627BECB7A0030C389 /* AdSupport.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,6 +116,7 @@
 		0E3D0BE227A206BE00266507 /* Plantinhas */ = {
 			isa = PBXGroup;
 			children = (
+				0EE0847927BECC680030C389 /* Info.plist */,
 				0E3D0BE327A206BE00266507 /* AppDelegate.swift */,
 				0E3D0BE527A206BF00266507 /* GameScene.sks */,
 				0E3D0BE727A206BF00266507 /* Actions.sks */,
@@ -134,6 +142,8 @@
 		0EF40D4927B92ED700DA3C9A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0EE0847727BECB870030C389 /* AppTrackingTransparency.framework */,
+				0EE0847527BECB7A0030C389 /* AdSupport.framework */,
 				0EF40D4A27B92ED700DA3C9A /* GameKit.framework */,
 				8120E8CB3EFEEEE338D997E2 /* Pods_Plantinhas.framework */,
 			);
@@ -146,7 +156,6 @@
 				66B982A7E946AFF7693390B7 /* Pods-Plantinhas.debug.xcconfig */,
 				C820623215C790CDD65044E5 /* Pods-Plantinhas.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -435,6 +444,7 @@
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = JG6HBW9K8J;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Plantinhas/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -466,6 +476,7 @@
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = JG6HBW9K8J;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Plantinhas/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

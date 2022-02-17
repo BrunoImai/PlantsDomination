@@ -7,7 +7,10 @@
 
 
 import UIKit
-import 
+import FBSDKCoreKit
+import AppTrackingTransparency
+import AdSupport
+import FirebaseAnalytics
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -30,9 +33,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 self.window?.makeKeyAndVisible()
         }
         
-        Settings.setAdvertiserTrackingEnabled(true)
-            Settings.shared.isAutoLogAppEventsEnabled = true
-            Settings.shared.isAdvertiserIDCollectionEnabled = true
+        ApplicationDelegate.shared.application(
+                            application,
+                            didFinishLaunchingWithOptions: launchOptions)
+
         
         return true
     }
@@ -54,8 +58,63 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        
+        requestDataPermission()
     }
 
-
+    func application(
+                _ app: UIApplication,
+                open url: URL,
+                options: [UIApplication.OpenURLOptionsKey : Any] = [:]
+            ) -> Bool {
+                ApplicationDelegate.shared.application(
+                    app,
+                    open: url,
+                    sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
+                    annotation: options[UIApplication.OpenURLOptionsKey.annotation]
+                )
+        }
+    
+    func requestDataPermission() {
+            if #available(iOS 14, *) {
+                
+                
+                ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in
+                    switch status {
+                    case .authorized:
+                        // Tracking authorization dialog was shown
+                        // and we are authorized
+                        Settings.setAdvertiserTrackingEnabled(true)
+                        Settings.shared.isAutoLogAppEventsEnabled = true
+                        Settings.shared.isAdvertiserIDCollectionEnabled = true
+                        Analytics.setUserProperty("true",
+                        forName: AnalyticsUserPropertyAllowAdPersonalizationSignals)
+                                            Analytics.setAnalyticsCollectionEnabled(true)
+                        
+                        print("Authorized")
+                    case .denied:
+                        // Tracking authorization dialog was
+                        // shown and permission is denied
+                        
+                        Settings.setAdvertiserTrackingEnabled(false)
+                        Settings.shared.isAutoLogAppEventsEnabled = false
+                        Settings.shared.isAdvertiserIDCollectionEnabled = false
+                        Analytics.setUserProperty("false",
+                        forName: AnalyticsUserPropertyAllowAdPersonalizationSignals)
+                                            Analytics.setAnalyticsCollectionEnabled(false)
+                        print("Denied")
+                    case .notDetermined:
+                        // Tracking authorization dialog has not been shown
+                        print("Not Determined")
+                    case .restricted:
+                        print("Restricted")
+                    @unknown default:
+                        print("Unknown")
+                    }
+                })
+            } else {
+                //you got permission to track, iOS 14 is not yet installed
+            }
+        }
 }
 
