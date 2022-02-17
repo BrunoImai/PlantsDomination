@@ -9,6 +9,7 @@ import UIKit
 import SpriteKit
 import GameplayKit
 
+
 class GameViewController: UIViewController {
     @IBOutlet weak var emptyShopBannerView: UIView!
     

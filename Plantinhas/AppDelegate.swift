@@ -5,7 +5,9 @@
 //  Created by Bruno Imai on 26/01/22.
 //
 
+
 import UIKit
+import 
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -28,6 +30,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 self.window?.makeKeyAndVisible()
         }
         
+        Settings.setAdvertiserTrackingEnabled(true)
+            Settings.shared.isAutoLogAppEventsEnabled = true
+            Settings.shared.isAdvertiserIDCollectionEnabled = true
         
         return true
     }
