@@ -57,7 +57,6 @@
 		0E8EFBBC27A9687B00466722 /* Shop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shop.swift; sourceTree = "<group>"; };
 		0EE0847527BECB7A0030C389 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		0EE0847727BECB870030C389 /* AppTrackingTransparency.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppTrackingTransparency.framework; path = System/Library/Frameworks/AppTrackingTransparency.framework; sourceTree = SDKROOT; };
-		0EE0847927BECC680030C389 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		0EED4C3D27BA97F40054FE04 /* musicFarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = musicFarm.mp3; sourceTree = "<group>"; };
 		0EED4C3F27BA9FF50054FE04 /* buy.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = buy.wav; sourceTree = "<group>"; };
 		0EED4C4127BA9FFA0054FE04 /* fuse.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = fuse.wav; sourceTree = "<group>"; };
@@ -97,8 +96,11 @@
 		0E3D0BD727A206BE00266507 = {
 			isa = PBXGroup;
 			children = (
+				0EE0847C27BED2520030C389 /* Assets */,
+				0EE0847B27BED1F40030C389 /* Scenes */,
+				0EE0847A27BED1C00030C389 /* Views */,
 				0B28C56527B69E0D00293048 /* Onboarding */,
-				0E3D0BE227A206BE00266507 /* Plantinhas */,
+				0E3D0BE227A206BE00266507 /* Gamelogic */,
 				0E3D0BE127A206BE00266507 /* Products */,
 				0EF40D4927B92ED700DA3C9A /* Frameworks */,
 				28509F300249C62D402699F3 /* Pods */,
@@ -113,30 +115,50 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		0E3D0BE227A206BE00266507 /* Plantinhas */ = {
+		0E3D0BE227A206BE00266507 /* Gamelogic */ = {
 			isa = PBXGroup;
 			children = (
-				0EE0847927BECC680030C389 /* Info.plist */,
 				0E3D0BE327A206BE00266507 /* AppDelegate.swift */,
-				0E3D0BE527A206BF00266507 /* GameScene.sks */,
-				0E3D0BE727A206BF00266507 /* Actions.sks */,
 				0E8EFBBA27A9685800466722 /* GameManager.swift */,
 				0E3D0BE927A206BF00266507 /* GameScene.swift */,
 				0E3D0BEB27A206BF00266507 /* GameViewController.swift */,
-				0E3D0BED27A206BF00266507 /* Main.storyboard */,
-				0E3D0BF027A206C000266507 /* Assets.xcassets */,
-				0E3D0BF227A206C000266507 /* LaunchScreen.storyboard */,
 				0E3D0C1D27A42E1E00266507 /* Plant.swift */,
 				0E8EFBBC27A9687B00466722 /* Shop.swift */,
+			);
+			path = Gamelogic;
+			sourceTree = "<group>";
+		};
+		0EE0847A27BED1C00030C389 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0E3D0BED27A206BF00266507 /* Main.storyboard */,
 				0E08B06D27AC6F630059A4B9 /* plantCollectionViewCell.swift */,
 				0E08B06E27AC6F630059A4B9 /* plantCollectionViewCell.xib */,
 				0E6D653127B5908D0034EF4A /* PlantPediaCollectionViewCell.swift */,
 				0E6D653227B5908D0034EF4A /* PlantPediaCollectionViewCell.xib */,
+				0E3D0BF227A206C000266507 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0EE0847B27BED1F40030C389 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				0E3D0BE527A206BF00266507 /* GameScene.sks */,
+				0E3D0BE727A206BF00266507 /* Actions.sks */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		0EE0847C27BED2520030C389 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
 				0EED4C3D27BA97F40054FE04 /* musicFarm.mp3 */,
 				0EED4C3F27BA9FF50054FE04 /* buy.wav */,
 				0EED4C4127BA9FFA0054FE04 /* fuse.wav */,
+				0E3D0BF027A206C000266507 /* Assets.xcassets */,
 			);
-			path = Plantinhas;
+			path = Assets;
 			sourceTree = "<group>";
 		};
 		0EF40D4927B92ED700DA3C9A /* Frameworks */ = {
@@ -458,7 +480,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.deboraheberle.PlantDomination;
+				PRODUCT_BUNDLE_IDENTIFIER = plants.domination;
 				PRODUCT_NAME = "Plant Domination";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -490,7 +512,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.deboraheberle.PlantDomination;
+				PRODUCT_BUNDLE_IDENTIFIER = plants.domination;
 				PRODUCT_NAME = "Plant Domination";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
