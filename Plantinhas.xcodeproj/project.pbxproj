@@ -51,6 +51,7 @@
 		0E3D0BF027A206C000266507 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0E3D0BF327A206C000266507 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0E3D0C1D27A42E1E00266507 /* Plant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plant.swift; sourceTree = "<group>"; };
+		0E56E91B27C4133100B418B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E6D653127B5908D0034EF4A /* PlantPediaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantPediaCollectionViewCell.swift; sourceTree = "<group>"; };
 		0E6D653227B5908D0034EF4A /* PlantPediaCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlantPediaCollectionViewCell.xib; sourceTree = "<group>"; };
 		0E8EFBBA27A9685800466722 /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
@@ -121,6 +122,7 @@
 				0E3D0BE327A206BE00266507 /* AppDelegate.swift */,
 				0E8EFBBA27A9685800466722 /* GameManager.swift */,
 				0E3D0BE927A206BF00266507 /* GameScene.swift */,
+				0E56E91B27C4133100B418B3 /* Info.plist */,
 				0E3D0BEB27A206BF00266507 /* GameViewController.swift */,
 				0E3D0C1D27A42E1E00266507 /* Plant.swift */,
 				0E8EFBBC27A9687B00466722 /* Shop.swift */,
@@ -465,8 +467,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = JG6HBW9K8J;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Plantinhas/Info.plist;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = /Users/brunoimai/Documents/GitHub/PlantsDomination/Gamelogic/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -497,8 +499,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = JG6HBW9K8J;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Plantinhas/Info.plist;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = /Users/brunoimai/Documents/GitHub/PlantsDomination/Gamelogic/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
