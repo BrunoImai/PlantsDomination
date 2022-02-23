@@ -165,7 +165,7 @@ class GameScene: SKScene {
     func spawnFromSeed(_ seed: SKNode) {
         if  plantInScene.count <= GameManager.shared.plantLimit {
 
-            let plant = Plant(name: "Brotinho", oxygeProduction: 1.1)
+            let plant = Plant(name: "Brotinho", oxygeProduction: 100000)
             
             plant.node.position = seed.position
             plant.setDesc()
@@ -287,11 +287,7 @@ class GameScene: SKScene {
             GameManager.shared.actualOxygen += plant.oxygenProduction
         }
         
-        let numberFormatter = NumberFormatter()
-        numberFormatter.numberStyle = .decimal
-        numberFormatter.maximumFractionDigits = 0
-        let number =  numberFormatter.string(from: NSNumber(value: GameManager.shared.actualOxygen))
-        viewController?.oxygenNumberLabel.text = number
+        viewController?.oxygenNumberLabel.text = formatNumber(GameManager.shared.actualOxygen)
     }
     
     func getYScale(_ pos : CGFloat) -> Double{
@@ -344,6 +340,75 @@ class GameScene: SKScene {
         }
         
     }
+}
+
+func formatNumber(_ numberToformat : Double) -> String {
+    
+
+    if numberToformat > 999999 {
+        var cont = 0
+        var numberToformat = numberToformat
+        var numberRange = ""
+        while numberToformat > 999 {
+            numberToformat /= 1000
+            print(numberToformat)
+            cont += 1
+        }
+        
+        switch cont {
+        case 1:
+            numberRange = ""
+            break
+        case 2:
+            numberRange = " M"
+            break
+        case 3:
+            numberRange = " Bi"
+            break
+        case 4:
+            numberRange = " Tri"
+            break
+        case 5:
+            numberRange = " Qua"
+            break
+        case 6:
+            numberRange = " Qui"
+            break
+        case 7:
+            numberRange = " Sex"
+            break
+        case 8:
+            numberRange = " Sep"
+            break
+        case 9:
+            numberRange = " Oct"
+            break
+        case 10:
+            numberRange = " Non"
+            break
+        case 11:
+            numberRange = " Dec"
+            break
+            
+            
+        default:
+            numberRange = " ?"
+        }
+        
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        numberFormatter.maximumFractionDigits = 0
+        let number =  numberFormatter.string(from: NSNumber(value: numberToformat))!
+        
+        return number + numberRange
+    }
+    
+    let numberFormatter = NumberFormatter()
+    numberFormatter.numberStyle = .decimal
+    numberFormatter.maximumFractionDigits = 0
+    let number =  numberFormatter.string(from: NSNumber(value: numberToformat))!
+    
+    return number
 }
 
 

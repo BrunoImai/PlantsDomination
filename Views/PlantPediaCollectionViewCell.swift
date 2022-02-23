@@ -48,13 +48,7 @@ class PlantPediaCollectionViewCell: UICollectionViewCell {
         plantName.text = plant.name
         plantDesc.text = plant.desc
         plantTinyDesc.text = plant.tinyDesc
-        
-        let numberFormatter = NumberFormatter()
-        numberFormatter.numberStyle = .decimal
-        numberFormatter.maximumFractionDigits = 0
-        let number =  numberFormatter.string(from: NSNumber(value: plant.oxygenProduction))
-        
-        oxygenValue.text = number
+        oxygenValue.text = formatNumber(plant.oxygenProduction)
         maxWidth = 250
     }
 }

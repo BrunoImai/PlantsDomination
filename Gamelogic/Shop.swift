@@ -48,7 +48,7 @@ class Shop: NSObject {
             
             GameManager.shared.actualOxygen -= farmLimitUpgradeValue
             
-            if GameManager.shared.oxygenBoost < 500 {
+            if GameManager.shared.plantLimit <= 30 {
                 GameManager.shared.plantLimit += 1
                 farmLimitUpgradeValue = setFarmLimitUpgradeValue(GameManager.shared.plantLimit)
                 refreshShop()

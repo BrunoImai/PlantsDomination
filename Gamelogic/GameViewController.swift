@@ -110,12 +110,8 @@ class GameViewController: UIViewController {
         newPlantDesc.text = plant.desc
         newPlantName.text = plant.name
         newPlantTinyDesc.text = plant.tinyDesc
-        
-        let numberFormatter = NumberFormatter()
-        numberFormatter.numberStyle = .decimal
-        numberFormatter.maximumFractionDigits = 0
-        let number =  numberFormatter.string(from: NSNumber(value: plant.oxygenProduction))
-        oxygenProduction.text = number
+    
+        oxygenProduction.text = formatNumber(plant.oxygenProduction)
         newPlantImage.image = UIImage.init(named: plant.name)
         
         newPlantView.isHidden = false
@@ -130,9 +126,9 @@ class GameViewController: UIViewController {
         let oxygenBoostUpgradeValue = GameManager.shared.shop.oxygenBoostUpgradeValue
         let seedSpawnUpgradeValue = GameManager.shared.shop.seedSpawnUpgradeValue
         
-        limitFarmValueLabel.text = String(farmLimitUpgradeValue)
-        oxygenBoostValueLabel.text = String(oxygenBoostUpgradeValue)
-        seedSpawnValueLabel.text = String(seedSpawnUpgradeValue)
+        limitFarmValueLabel.text = formatNumber(farmLimitUpgradeValue)
+        oxygenBoostValueLabel.text = formatNumber(oxygenBoostUpgradeValue)
+        seedSpawnValueLabel.text = formatNumber(seedSpawnUpgradeValue)
         
         canPurchase(farmLimitUpgradeValue, limitFarmButton)
         canPurchase(oxygenBoostUpgradeValue, oxygenBoostButton)

@@ -52,11 +52,7 @@ class plantCollectionViewCell: UICollectionViewCell {
         plantNameOutlet.text = plant.name
         
         let plantPrice = GameManager.shared.shop.plantsValue[plant.name]!
-        let numberFormatter = NumberFormatter()
-        numberFormatter.numberStyle = .decimal
-        numberFormatter.maximumFractionDigits = 0
-        let number =  numberFormatter.string(from: NSNumber(value: plantPrice))
-        oxygenPrice.text = number
+        oxygenPrice.text = formatNumber(plantPrice)
         updateUIBuyButton(plantPrice, buyButton)
         
         maxWidth = 125
