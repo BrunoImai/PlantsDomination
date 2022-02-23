@@ -6,8 +6,6 @@
 	<dict>
 		<key>FBAEMKit.xcscheme</key>
 		<dict>
-			<key>isShown</key>
-			<false/>
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
@@ -20,10 +18,18 @@
 		</dict>
 		<key>FBSDKCoreKit_Basics.xcscheme</key>
 		<dict>
-			<key>isShown</key>
-			<false/>
 			<key>orderHint</key>
 			<integer>2</integer>
+		</dict>
+		<key>FBSDKLoginKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>FBSDKShareKit.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Firebase.xcscheme</key>
 		<dict>
