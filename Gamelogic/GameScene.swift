@@ -12,7 +12,10 @@ class GameScene: SKScene {
     
     let defaults = UserDefaults.standard
     
-    weak var viewController : GameViewController?
+    weak var gameVC : GameViewController?
+    weak var popUpShopVC : ShopPopUpViewController?
+    weak var popUpPediaVC : PediaPopUpViewController?
+    weak var popUpNewPlantVC :NewPlantPopUpViewController?
     
     var plantInScene : [Plant] = []
     
@@ -23,6 +26,31 @@ class GameScene: SKScene {
 
     override func didMove(to view: SKView) {
         
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "popUpNewPlantVC") as! NewPlantPopUpViewController
+print ("""
+
+ENTROU NA SCENE
+
+
+""")
+        
+        print(vc.restorationIdentifier)
+        
+        print ("""
+
+        
+        
+        
+        
+        
+        
+        ENTROU NA SCENE
+
+
+        """)
+        self.popUpNewPlantVC = vc
+    
         background = self.childNode(withName: "background1") as? SKSpriteNode
         background?.name = "background"
         background?.isUserInteractionEnabled = true
@@ -65,12 +93,12 @@ class GameScene: SKScene {
     }
     
     func touchMoved(toPoint pos : CGPoint) {
-        let maxYtouch = (viewController?.oxygenNumberLabel.frame.maxY)! + (viewController?.view.frame.height)!/2 - 45
+        let maxYtouch = (gameVC?.oxygenNumberLabel.frame.maxY)! + (gameVC?.view.frame.height)!/2 - 45
 
         if pos.y < maxYtouch {
             if currentNode != nil && currentNode!.name != "seed" && currentNode!.name != "background"  {
                 self.currentNode!.position = pos
-                print(currentNode!.name!)
+                
             }
         }
     }
@@ -123,12 +151,17 @@ class GameScene: SKScene {
     
     
     override func update(_ currentTime: TimeInterval) {
+        
+        guard popUpShopVC == nil else {
+            popUpShopVC?.updateShopUI()
+            updatePosition()
+            return
+        }
         updatePosition()
-        viewController?.updateShopUI()
     }
     
     func random() -> CGFloat {
-        return CGFloat(Float(arc4random()) / 0xFFFFFFFF)
+        return CGFloat(Float(arc4random()) / 4294967296)
     }
     
     func random(min: CGFloat, max: CGFloat) -> CGFloat {
@@ -136,8 +169,8 @@ class GameScene: SKScene {
     }
     
     func reloadCollectionView( ) {
-        viewController?.shopCollectionView.reloadData()
-        viewController?.pediaCollectionView.reloadData()
+        popUpShopVC?.shopCollectionView.reloadData()
+        popUpPediaVC?.pediaCollectionView.reloadData()
     }
     
     //MARK: Plant Menagement
@@ -165,7 +198,7 @@ class GameScene: SKScene {
     func spawnFromSeed(_ seed: SKNode) {
         if  plantInScene.count <= GameManager.shared.plantLimit {
 
-            let plant = Plant(name: "Brotinho", oxygeProduction: 100000)
+            let plant = Plant(name: "Brotinho", oxygeProduction: 1.1)
             
             plant.node.position = seed.position
             plant.setDesc()
@@ -287,7 +320,7 @@ class GameScene: SKScene {
             GameManager.shared.actualOxygen += plant.oxygenProduction
         }
         
-        viewController?.oxygenNumberLabel.text = formatNumber(GameManager.shared.actualOxygen)
+        gameVC?.oxygenNumberLabel.text = formatNumber(GameManager.shared.actualOxygen)
     }
     
     func getYScale(_ pos : CGFloat) -> Double{
@@ -336,7 +369,6 @@ class GameScene: SKScene {
         for plant in GameManager.shared.gameScene!.plantInScene {
             addChild(plant.node)
             plant.setDesc()
-            print(plant.tinyDesc)
         }
         
     }
@@ -351,7 +383,6 @@ func formatNumber(_ numberToformat : Double) -> String {
         var numberRange = ""
         while numberToformat > 999 {
             numberToformat /= 1000
-            print(numberToformat)
             cont += 1
         }
         

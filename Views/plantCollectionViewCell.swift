@@ -24,7 +24,9 @@ class plantCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var plantImage: UIImageView!
     @IBOutlet weak var plantNameOutlet: UILabel!
     @IBOutlet weak var oxygenPrice: UILabel!
-    @IBOutlet weak var buyButton: UIButton!
+    @IBOutlet weak var carbonPrice: UILabel!
+    @IBOutlet weak var buyButtonOxygen: UIButton!
+    @IBOutlet weak var buyButtonCarbon: UIButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -53,7 +55,7 @@ class plantCollectionViewCell: UICollectionViewCell {
         
         let plantPrice = GameManager.shared.shop.plantsValue[plant.name]!
         oxygenPrice.text = formatNumber(plantPrice)
-        updateUIBuyButton(plantPrice, buyButton)
+        updateUIBuyButton(plantPrice, buyButtonOxygen)
         
         maxWidth = 125
         // setup recebe os parametros e mudam as coisas
@@ -78,7 +80,6 @@ class plantCollectionViewCell: UICollectionViewCell {
             }
                 
         } else {
-            print()
             GameManager.shared.controller!.showToast(message: "Oxigênio insuficiente", font: .systemFont(ofSize: 12))
                 
             
@@ -96,7 +97,7 @@ class plantCollectionViewCell: UICollectionViewCell {
             
         }
             
-        updateUIBuyButton(plantPrice, buyButton)
+        updateUIBuyButton(plantPrice, buyButtonOxygen)
         
     }
     

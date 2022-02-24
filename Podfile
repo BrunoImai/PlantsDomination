@@ -7,9 +7,12 @@ target 'Plantinhas' do
 
   # Pods for Plantinhas
 
-pod 'FBSDKCoreKit'
 pod 'Firebase/Analytics'
 pod 'Firebase/Crashlytics'
 pod 'Google-Mobile-Ads-SDK'
+pod 'FBSDKCoreKit', '~> 8.0.0'
+pod 'FBSDKLoginKit', '~> 8.0.0'
+pod 'FBSDKShareKit', '~> 8.0.0'
+pod 'FBAudienceNetwork'
 
 end

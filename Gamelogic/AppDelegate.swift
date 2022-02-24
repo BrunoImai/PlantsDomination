@@ -8,9 +8,13 @@
 
 import UIKit
 import FBSDKCoreKit
+import FBSDKLoginKit
+import FBSDKShareKit
+import FBLPromises
 import AppTrackingTransparency
 import AdSupport
 import FirebaseAnalytics
+import FBAudienceNetwork
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -37,6 +41,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                             application,
                             didFinishLaunchingWithOptions: launchOptions)
 
+        FBAudienceNetworkAds.initialize(with: nil, completionHandler: nil)
+
+            // Pass user's consent after acquiring it. For sample app purposes, this is set to YES.
+        FBAdSettings.setAdvertiserTrackingEnabled(true)
         
         return true
     }
@@ -84,9 +92,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     case .authorized:
                         // Tracking authorization dialog was shown
                         // and we are authorized
-                        Settings.setAdvertiserTrackingEnabled(true)
-                        Settings.shared.isAutoLogAppEventsEnabled = true
-                        Settings.shared.isAdvertiserIDCollectionEnabled = true
+                        
+                        FBAdSettings.setAdvertiserTrackingEnabled(true)
+                        Settings.isAutoLogAppEventsEnabled = true
+                        Settings.isAdvertiserIDCollectionEnabled = true
                         Analytics.setUserProperty("true",
                         forName: AnalyticsUserPropertyAllowAdPersonalizationSignals)
                                             Analytics.setAnalyticsCollectionEnabled(true)
@@ -96,9 +105,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         // Tracking authorization dialog was
                         // shown and permission is denied
                         
-                        Settings.setAdvertiserTrackingEnabled(false)
-                        Settings.shared.isAutoLogAppEventsEnabled = false
-                        Settings.shared.isAdvertiserIDCollectionEnabled = false
+                        FBAdSettings.setAdvertiserTrackingEnabled(false)
+                        Settings.isAutoLogAppEventsEnabled = false
+                        Settings.isAdvertiserIDCollectionEnabled = false
                         Analytics.setUserProperty("false",
                         forName: AnalyticsUserPropertyAllowAdPersonalizationSignals)
                                             Analytics.setAnalyticsCollectionEnabled(false)
@@ -116,5 +125,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 //you got permission to track, iOS 14 is not yet installed
             }
         }
+    
+    
 }
 

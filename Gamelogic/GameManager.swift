@@ -36,7 +36,8 @@ class GameManager{
                 
                 shop.setPlantPrice(newPlant.name, newPlant.oxygenProduction * 250)
                 
-                controller?.setPlantAchived(newPlant)
+//MARK: REVISAR ERRO NEWPLANT POPUP
+                //gameScene?.popUpNewPlantVC!.setPlantAchived(newPlant)
                 
         }
     }
@@ -57,9 +58,6 @@ class GameManager{
     
     func saveGame() {
         save(actualOxygen, key: "actualOxygen")
-        
-//        let encodedShop = try! NSKeyedArchiver.archivedData(withRootObject: shop, requiringSecureCoding: false)
-//        save(encodedShop, key: "shop")
         
         let encodedPlantsDiscovered = try! NSKeyedArchiver.archivedData(withRootObject: plantsDiscovered, requiringSecureCoding: false)
         save(encodedPlantsDiscovered, key: "plantsDiscovered")
