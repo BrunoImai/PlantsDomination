@@ -22,6 +22,8 @@
 		0E3D0BF427A206C000266507 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E3D0BF227A206C000266507 /* LaunchScreen.storyboard */; };
 		0E3D0C1E27A42E1F00266507 /* Plant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3D0C1D27A42E1E00266507 /* Plant.swift */; };
 		0E535C6A27C6615400919D18 /* ShopPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E535C6927C6615400919D18 /* ShopPopUpViewController.swift */; };
+		0E535C6C27C6A6D200919D18 /* PediaPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E535C6B27C6A6D200919D18 /* PediaPopUpViewController.swift */; };
+		0E535C6E27C6AD9100919D18 /* NewPlantPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E535C6D27C6AD9100919D18 /* NewPlantPopUpViewController.swift */; };
 		0E6D653327B5908D0034EF4A /* PlantPediaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6D653127B5908D0034EF4A /* PlantPediaCollectionViewCell.swift */; };
 		0E6D653427B5908D0034EF4A /* PlantPediaCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E6D653227B5908D0034EF4A /* PlantPediaCollectionViewCell.xib */; };
 		0E8EFBBB27A9685800466722 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8EFBBA27A9685800466722 /* GameManager.swift */; };
@@ -53,6 +55,8 @@
 		0E3D0BF327A206C000266507 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0E3D0C1D27A42E1E00266507 /* Plant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plant.swift; sourceTree = "<group>"; };
 		0E535C6927C6615400919D18 /* ShopPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopPopUpViewController.swift; sourceTree = "<group>"; };
+		0E535C6B27C6A6D200919D18 /* PediaPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PediaPopUpViewController.swift; sourceTree = "<group>"; };
+		0E535C6D27C6AD9100919D18 /* NewPlantPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlantPopUpViewController.swift; sourceTree = "<group>"; };
 		0E56E91B27C4133100B418B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E6D653127B5908D0034EF4A /* PlantPediaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantPediaCollectionViewCell.swift; sourceTree = "<group>"; };
 		0E6D653227B5908D0034EF4A /* PlantPediaCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlantPediaCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -125,7 +129,6 @@
 				0E8EFBBA27A9685800466722 /* GameManager.swift */,
 				0E3D0BE927A206BF00266507 /* GameScene.swift */,
 				0E56E91B27C4133100B418B3 /* Info.plist */,
-				0E3D0BEB27A206BF00266507 /* GameViewController.swift */,
 				0E3D0C1D27A42E1E00266507 /* Plant.swift */,
 				0E8EFBBC27A9687B00466722 /* Shop.swift */,
 			);
@@ -135,6 +138,7 @@
 		0EE0847A27BED1C00030C389 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0E3D0BEB27A206BF00266507 /* GameViewController.swift */,
 				0E3D0BED27A206BF00266507 /* Main.storyboard */,
 				0E08B06D27AC6F630059A4B9 /* plantCollectionViewCell.swift */,
 				0E08B06E27AC6F630059A4B9 /* plantCollectionViewCell.xib */,
@@ -142,6 +146,8 @@
 				0E6D653227B5908D0034EF4A /* PlantPediaCollectionViewCell.xib */,
 				0E3D0BF227A206C000266507 /* LaunchScreen.storyboard */,
 				0E535C6927C6615400919D18 /* ShopPopUpViewController.swift */,
+				0E535C6B27C6A6D200919D18 /* PediaPopUpViewController.swift */,
+				0E535C6D27C6AD9100919D18 /* NewPlantPopUpViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -311,10 +317,12 @@
 			files = (
 				0E3D0BEA27A206BF00266507 /* GameScene.swift in Sources */,
 				0E535C6A27C6615400919D18 /* ShopPopUpViewController.swift in Sources */,
+				0E535C6E27C6AD9100919D18 /* NewPlantPopUpViewController.swift in Sources */,
 				0E08B06F27AC6F630059A4B9 /* plantCollectionViewCell.swift in Sources */,
 				0E3D0C1E27A42E1F00266507 /* Plant.swift in Sources */,
 				0B28C55E27B5914000293048 /* OnBoardingViewController.swift in Sources */,
 				0E8EFBBB27A9685800466722 /* GameManager.swift in Sources */,
+				0E535C6C27C6A6D200919D18 /* PediaPopUpViewController.swift in Sources */,
 				0E8EFBBD27A9687B00466722 /* Shop.swift in Sources */,
 				0E3D0BEC27A206BF00266507 /* GameViewController.swift in Sources */,
 				0E6D653327B5908D0034EF4A /* PlantPediaCollectionViewCell.swift in Sources */,
@@ -469,7 +477,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = JG6HBW9K8J;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = /Users/brunoimai/Documents/GitHub/PlantsDomination/Gamelogic/Info.plist;
@@ -501,7 +509,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = JG6HBW9K8J;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = /Users/brunoimai/Documents/GitHub/PlantsDomination/Gamelogic/Info.plist;

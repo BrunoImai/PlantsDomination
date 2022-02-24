@@ -45,7 +45,6 @@ class OnBoardingViewController: UIViewController {
     
     @IBAction func nextButtonClicked(_ sender: Any) {
         
-        print("clicou")
         if currentPage == slides.count - 1 {
         
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
