@@ -15,6 +15,7 @@ import AppTrackingTransparency
 import AdSupport
 import FirebaseAnalytics
 import FBAudienceNetwork
+import Firebase
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -46,6 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // Pass user's consent after acquiring it. For sample app purposes, this is set to YES.
         FBAdSettings.setAdvertiserTrackingEnabled(true)
         
+        FirebaseApp.configure()
         return true
     }
 

@@ -24,6 +24,7 @@
 		0E535C6A27C6615400919D18 /* ShopPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E535C6927C6615400919D18 /* ShopPopUpViewController.swift */; };
 		0E535C6C27C6A6D200919D18 /* PediaPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E535C6B27C6A6D200919D18 /* PediaPopUpViewController.swift */; };
 		0E535C6E27C6AD9100919D18 /* NewPlantPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E535C6D27C6AD9100919D18 /* NewPlantPopUpViewController.swift */; };
+		0E535C7027C9484100919D18 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0E535C6F27C9484100919D18 /* GoogleService-Info.plist */; };
 		0E6D653327B5908D0034EF4A /* PlantPediaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E6D653127B5908D0034EF4A /* PlantPediaCollectionViewCell.swift */; };
 		0E6D653427B5908D0034EF4A /* PlantPediaCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E6D653227B5908D0034EF4A /* PlantPediaCollectionViewCell.xib */; };
 		0E8EFBBB27A9685800466722 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8EFBBA27A9685800466722 /* GameManager.swift */; };
@@ -57,6 +58,7 @@
 		0E535C6927C6615400919D18 /* ShopPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopPopUpViewController.swift; sourceTree = "<group>"; };
 		0E535C6B27C6A6D200919D18 /* PediaPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PediaPopUpViewController.swift; sourceTree = "<group>"; };
 		0E535C6D27C6AD9100919D18 /* NewPlantPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlantPopUpViewController.swift; sourceTree = "<group>"; };
+		0E535C6F27C9484100919D18 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		0E56E91B27C4133100B418B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E6D653127B5908D0034EF4A /* PlantPediaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlantPediaCollectionViewCell.swift; sourceTree = "<group>"; };
 		0E6D653227B5908D0034EF4A /* PlantPediaCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlantPediaCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 		0E3D0BD727A206BE00266507 = {
 			isa = PBXGroup;
 			children = (
+				0E535C6F27C9484100919D18 /* GoogleService-Info.plist */,
 				0EE0847C27BED2520030C389 /* Assets */,
 				0EE0847B27BED1F40030C389 /* Scenes */,
 				0EE0847A27BED1C00030C389 /* Views */,
@@ -204,6 +207,7 @@
 				0E3D0BDD27A206BE00266507 /* Frameworks */,
 				0E3D0BDE27A206BE00266507 /* Resources */,
 				DEFB129AD47E4E8071EBB61F /* [CP] Embed Pods Frameworks */,
+				0E535C7127C9560700919D18 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -257,6 +261,7 @@
 				0EED4C3E27BA97F40054FE04 /* musicFarm.mp3 in Resources */,
 				0EED4C4027BA9FF50054FE04 /* buy.wav in Resources */,
 				0E3D0BF127A206C000266507 /* Assets.xcassets in Resources */,
+				0E535C7027C9484100919D18 /* GoogleService-Info.plist in Resources */,
 				0EED4C4227BA9FFA0054FE04 /* fuse.wav in Resources */,
 				0E6D653427B5908D0034EF4A /* PlantPediaCollectionViewCell.xib in Resources */,
 				0E3D0BF427A206C000266507 /* LaunchScreen.storyboard in Resources */,
@@ -269,6 +274,25 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0E535C7127C9560700919D18 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
+				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
+		};
 		702F119CC04B7141A65242B4 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -478,6 +502,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 4;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = JG6HBW9K8J;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = /Users/brunoimai/Documents/GitHub/PlantsDomination/Gamelogic/Info.plist;
