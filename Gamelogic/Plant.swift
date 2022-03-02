@@ -121,8 +121,8 @@ class Plant: NSObject, NSCoding  {
             """
         
         default:
-            tinyDesc = "deu ruim"
-            desc = "deu ruim"
+            tinyDesc = "erro"
+            desc = "erro"
         }
     }
 }

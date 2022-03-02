@@ -33,9 +33,9 @@ class OnBoardingViewController: UIViewController {
             
             OnboardingSlide(title:"Plant Domination", description:"Olá fazendeiro! Domine o mundo e conquiste novas fazendas  com suas plantas mutantes", image: UIImage.init(named: "Brotinho")!),
             
-            OnboardingSlide(title:"As sementes mágicas vão surgir", description:"Clique nelas para as primeiras plantas brotarem", image: UIImage.init(named: "Brotinho")!),
+            OnboardingSlide(title:"As sementes mágicas vão surgir", description:"Clique nelas para as primeiras plantas brotarem", image: UIImage.init(named: "seed")!),
             
-            OnboardingSlide(title:"Arrate e junte", description:"as plantas iguais para formar novas mutações de plantas que geram mais oxigenio. Quanto mais plantas mais o mundo será dominado!", image: UIImage.init(named: "Brotinho")!),
+            OnboardingSlide(title:"Arraste e junte", description:"as plantas iguais para formar novas mutações de plantas que geram mais oxigênio, quanto mais você melhor! Compre upgrades para chegar ainda mais longe!", image: UIImage.init(named: "Fazengumelo")!),
         
         ]
         collectionView.delegate = self

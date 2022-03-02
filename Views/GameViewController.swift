@@ -8,18 +8,23 @@
 import UIKit
 import SpriteKit
 import GameplayKit
-
+import GoogleMobileAds
 
 class GameViewController: UIViewController {
+
+    @IBOutlet weak var adButton: UIButton!
     
-
     var currentGame: GameScene!
+    var rewardedAD : GADRewardedAd?
 
+    var timer = Timer()
+    
     @IBOutlet weak var oxygenNumberLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+       
+        loadRewardAd()
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
             if let scene = SKScene(fileNamed: "GameScene") {
@@ -34,7 +39,9 @@ class GameViewController: UIViewController {
             
             view.ignoresSiblingOrder = true
         }
-
+        timer = Timer.scheduledTimer(timeInterval: 350.0, target: self, selector: #selector(showAdButton), userInfo: nil, repeats: true)
+        
+        GameManager.shared.controller = self
     }
 
     override var shouldAutorotate: Bool {
@@ -60,6 +67,70 @@ class GameViewController: UIViewController {
         self.present(vc, animated: true, completion: nil)
     }
     
+//MARK: Ads Logic
+    
+    var adInScreen = true
+    
+    func loadRewardAd() {
+        let request = GADRequest()
+        GADRewardedAd.load(withAdUnitID: "ca-app-pub-2003885569288303/9199244739", request: request) { ad, error in
+            guard let error = error else {
+                self.rewardedAD = ad
+                self.rewardedAD?.fullScreenContentDelegate = self
+                return
+            }
+            print("Rewarded ad failed to load with error: ", error)
+        }
+    }
+    
+
+    
+    @objc func showAdButton() {
+        if !adInScreen {
+            adButton.isHidden = false
+            adButton.isUserInteractionEnabled = true
+            adInScreen = true
+        }
+        
+    }
+
+    @IBAction func teste(_ sender: Any) {
+        presentRewardedAd()
+        
+    }
+}
+
+extension GameViewController : GADFullScreenContentDelegate {
+    
+    func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
+        print("Erro ao apresentar em fullscreen: ", error)
+        showToast(message: "Erro ao apresentar AD", font: .systemFont(ofSize: 12))
+        loadRewardAd()
+    }
+    
+    func adWillPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+        print("Ad foi apresentado em fullscreen")
+        //MARK: tirar todos os sons
+        adButton.isHidden = true
+        adButton.isUserInteractionEnabled = false
+        adInScreen = false
+    }
+    
+    func adDidDismissFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+        print("Ad foi dispensado da fullscreen")
+        //MARK: voltar todos os sons
+        loadRewardAd()
+    }
+    
+    func presentRewardedAd() {
+        if let ad = rewardedAD {
+            ad.present(fromRootViewController: self) {
+                //MARK: FAZER A LOGICA AQ
+                GameManager.shared.carbonCredits += 100
+            }
+        }
+    }
+    
 }
 
 extension UIViewController {
@@ -67,6 +138,7 @@ extension UIViewController {
 func showToast(message : String, font: UIFont) {
 
     let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 125, y: 0, width: 250, height: 35))
+    toastLabel.layer.zPosition = 20000
     toastLabel.backgroundColor = UIColor.white
     toastLabel.textColor = UIColor.black
     toastLabel.font = font

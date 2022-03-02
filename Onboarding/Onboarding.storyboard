@@ -13,7 +13,6 @@
         <!--On Boarding View Controller-->
         <scene sceneID="Iem-mC-P7h">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jvf-7T-uqU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="Onboarding" id="sk1-9I-EiH" customClass="OnBoardingViewController" customModule="Plant_Domination" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="No0-ME-5lE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -74,7 +73,7 @@
                                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                             <color key="highlightedColor" red="0.26274509800000001" green="0.36078431370000003" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Domine o mundo conquistando fazendas com suas plantas mutante!" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Grg-Bd-eBj">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Evolua e misture suas plantas para conseguir mutações mais evoluidas!" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Grg-Bd-eBj">
                                                             <rect key="frame" x="0.0" y="60.5" width="300" height="64.5"/>
                                                             <color key="backgroundColor" red="0.26274509800000001" green="0.36078431370000003" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -126,6 +125,7 @@
                         <outlet property="pageControl" destination="cpk-Oq-xV3" id="Umw-5b-NxG"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jvf-7T-uqU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-710.14492753623199" y="97.767857142857139"/>
         </scene>

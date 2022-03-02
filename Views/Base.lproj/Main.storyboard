@@ -78,10 +78,24 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OUA-m3-5OD">
+                                <rect key="frame" x="321" y="138" width="61" height="61"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="61" id="8IF-fJ-vwi"/>
+                                    <constraint firstAttribute="height" constant="61" id="J2w-yo-DJb"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="carboncredit"/>
+                                <connections>
+                                    <action selector="teste:" destination="BV1-FR-VrT" eventType="touchUpInside" id="FR5-TK-iUk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="4qk-I5-YsI" firstAttribute="trailing" secondItem="OUA-m3-5OD" secondAttribute="trailing" constant="32" id="1Qe-x3-y13"/>
                             <constraint firstItem="4qk-I5-YsI" firstAttribute="trailing" secondItem="UN3-Ur-pG3" secondAttribute="trailing" id="CET-h9-Z5I"/>
                             <constraint firstItem="vg4-Os-7n4" firstAttribute="leading" secondItem="4qk-I5-YsI" secondAttribute="leading" constant="32" id="CXW-XS-EA5"/>
                             <constraint firstItem="4qk-I5-YsI" firstAttribute="trailing" secondItem="vg4-Os-7n4" secondAttribute="trailing" constant="32" id="Mhb-0a-gPD"/>
@@ -92,9 +106,12 @@
                             <constraint firstItem="4qk-I5-YsI" firstAttribute="trailing" secondItem="gRh-na-oRM" secondAttribute="trailing" constant="80" id="nmc-4m-RmM"/>
                             <constraint firstItem="4qk-I5-YsI" firstAttribute="bottom" secondItem="jRN-ID-4uQ" secondAttribute="bottom" id="qVw-Mu-W64"/>
                             <constraint firstItem="jRN-ID-4uQ" firstAttribute="leading" secondItem="4qk-I5-YsI" secondAttribute="leading" constant="80" id="tYE-ul-nsR"/>
+                            <constraint firstItem="OUA-m3-5OD" firstAttribute="top" secondItem="vg4-Os-7n4" secondAttribute="bottom" constant="32" id="xW3-My-S2a"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="hjF-e5-qfS"/>
                     <connections>
+                        <outlet property="adButton" destination="OUA-m3-5OD" id="8Qh-Mf-XGU"/>
                         <outlet property="oxygenNumberLabel" destination="hxo-x4-bLc" id="swy-Tz-8Sp"/>
                     </connections>
                 </viewController>
@@ -160,18 +177,21 @@
                                                                         <integer key="value" value="8"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="buyLimitCarbonUpgrade:" destination="ept-Tw-nvG" eventType="touchUpInside" id="FNk-Mc-f0J"/>
+                                                                </connections>
                                                             </button>
                                                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pcd-RX-MuY">
                                                                 <rect key="frame" x="0.0" y="0.0" width="342" height="119"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expanda a capacidade de plantas na sua fazenda" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H5j-jr-zmu" userLabel="TitleLabel">
-                                                                        <rect key="frame" x="22" y="19" width="197" height="33.5"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mais Terreno!" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H5j-jr-zmu" userLabel="TitleLabel">
+                                                                        <rect key="frame" x="22" y="19" width="197" height="17"/>
                                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Compre mais terreno pra que caibam mais plantas" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G05-qo-Qrb" userLabel="DescLabel">
-                                                                        <rect key="frame" x="22" y="60.5" width="197" height="29"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Maior terreno para maiores plantas!  Aumente o espaço da sua fazenda em 1." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G05-qo-Qrb" userLabel="DescLabel">
+                                                                        <rect key="frame" x="22" y="44" width="197" height="43"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
@@ -291,18 +311,21 @@
                                                                         <integer key="value" value="8"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="buySeedSpawnCarbonUpgrade:" destination="ept-Tw-nvG" eventType="touchUpInside" id="dOR-03-gfp"/>
+                                                                </connections>
                                                             </button>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SZh-zj-kn4">
                                                                 <rect key="frame" x="0.0" y="0.0" width="342" height="123"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Compre sementes mais rápido!" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MZB-Co-tpl" userLabel="TitleLabel">
-                                                                        <rect key="frame" x="22" y="19" width="197" height="33.5"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adubo modificado" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MZB-Co-tpl" userLabel="TitleLabel">
+                                                                        <rect key="frame" x="22" y="19" width="197" height="17"/>
                                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Faca as sementes aparecerem num menor intervalo de tempo na sua fazenda" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y0y-cW-71t" userLabel="DescLabel">
-                                                                        <rect key="frame" x="22" y="60.5" width="197" height="43"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Faca as sementes aparecerem mais rapido em sua fazenda!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y0y-cW-71t" userLabel="DescLabel">
+                                                                        <rect key="frame" x="22" y="44" width="197" height="29"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
@@ -422,17 +445,20 @@
                                                                         <integer key="value" value="8"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="buyOxygenBoostUpgradeCarbon:" destination="ept-Tw-nvG" eventType="touchUpInside" id="gtG-rC-C9r"/>
+                                                                </connections>
                                                             </button>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kuO-Cy-xaX">
                                                                 <rect key="frame" x="0.0" y="0.0" width="342" height="123"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Melhore a producao de O2" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oDR-QE-sRG" userLabel="TitleLabel">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mutagênicos melhorados!" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oDR-QE-sRG" userLabel="TitleLabel">
                                                                         <rect key="frame" x="22" y="19" width="197" height="17"/>
                                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Faca as sementes aparecerem num menor intervalo de tempo na sua fazenda" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Evc-Zz-0wT" userLabel="DescLabel">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Melhores mutagênicos fazem as suas plantas produzirem 10 % a mais de oxigênio!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Evc-Zz-0wT" userLabel="DescLabel">
                                                                         <rect key="frame" x="22" y="44" width="197" height="43"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -570,6 +596,32 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="o2" translatesAutoresizingMaskIntoConstraints="NO" id="UUd-DP-h1T">
+                                                        <rect key="frame" x="109.5" y="22.5" width="32" height="32"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="32" id="SAY-Ss-Nqd"/>
+                                                            <constraint firstAttribute="height" constant="32" id="mLH-tn-Tgo"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SpF-E7-dl6">
+                                                        <rect key="frame" x="157.5" y="29.5" width="39" height="18"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                        <color key="textColor" red="0.27396270630000003" green="0.34069055320000002" blue="0.87063491339999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cLa-sW-Mzp">
+                                                        <rect key="frame" x="276.5" y="29.5" width="39" height="18"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                        <color key="textColor" red="0.27396270630000003" green="0.34069055320000002" blue="0.87063491339999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="carboncredit" translatesAutoresizingMaskIntoConstraints="NO" id="nRU-dV-f5Y">
+                                                        <rect key="frame" x="228.5" y="22.5" width="32" height="32"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="32" id="aac-At-HEb"/>
+                                                            <constraint firstAttribute="width" constant="32" id="wcI-Nm-pOa"/>
+                                                        </constraints>
+                                                    </imageView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -577,21 +629,29 @@
                                                     <constraint firstItem="mwz-Yq-LEe" firstAttribute="leading" secondItem="MBg-9s-GPA" secondAttribute="leading" constant="16" id="28Q-so-VnX"/>
                                                     <constraint firstItem="9OB-lj-J94" firstAttribute="top" secondItem="MBg-9s-GPA" secondAttribute="top" constant="24" id="5jv-2B-59G"/>
                                                     <constraint firstItem="lVR-Ga-Afu" firstAttribute="top" secondItem="mwz-Yq-LEe" secondAttribute="bottom" constant="16" id="5sm-GA-ElS"/>
+                                                    <constraint firstItem="SpF-E7-dl6" firstAttribute="leading" secondItem="UUd-DP-h1T" secondAttribute="trailing" constant="16" id="7iR-wm-HoQ"/>
+                                                    <constraint firstItem="nRU-dV-f5Y" firstAttribute="centerY" secondItem="SpF-E7-dl6" secondAttribute="centerY" id="CLZ-a7-Uo5"/>
                                                     <constraint firstItem="9OB-lj-J94" firstAttribute="leading" secondItem="MBg-9s-GPA" secondAttribute="leading" constant="32" id="DIK-Mg-E82"/>
                                                     <constraint firstAttribute="trailing" secondItem="cDA-af-PYN" secondAttribute="trailing" constant="16" id="DT3-tG-Gdx"/>
+                                                    <constraint firstItem="UUd-DP-h1T" firstAttribute="leading" secondItem="9OB-lj-J94" secondAttribute="trailing" constant="32" id="EAT-Vx-QbN"/>
                                                     <constraint firstAttribute="trailing" secondItem="lVR-Ga-Afu" secondAttribute="trailing" constant="16" id="OgG-qc-ePd"/>
                                                     <constraint firstAttribute="trailing" secondItem="OdL-iI-7qq" secondAttribute="trailing" constant="16" id="QlL-aw-gto"/>
                                                     <constraint firstItem="cDA-af-PYN" firstAttribute="top" secondItem="5rP-oh-lzV" secondAttribute="bottom" constant="16" id="RwT-zJ-bUA"/>
+                                                    <constraint firstItem="nRU-dV-f5Y" firstAttribute="leading" secondItem="SpF-E7-dl6" secondAttribute="trailing" constant="32" id="T49-qN-7HB"/>
                                                     <constraint firstItem="5rP-oh-lzV" firstAttribute="leading" secondItem="MBg-9s-GPA" secondAttribute="leading" constant="16" id="VTv-DZ-cdS"/>
+                                                    <constraint firstItem="SpF-E7-dl6" firstAttribute="centerY" secondItem="UUd-DP-h1T" secondAttribute="centerY" id="Vje-zV-VJp"/>
                                                     <constraint firstAttribute="trailing" secondItem="mwz-Yq-LEe" secondAttribute="trailing" constant="16" id="dDg-fd-GNV"/>
                                                     <constraint firstItem="5rP-oh-lzV" firstAttribute="top" secondItem="9OB-lj-J94" secondAttribute="bottom" constant="16" id="dOa-UT-9Rb"/>
                                                     <constraint firstItem="mwz-Yq-LEe" firstAttribute="top" secondItem="cDA-af-PYN" secondAttribute="bottom" constant="16" id="dcR-NQ-TUa"/>
+                                                    <constraint firstItem="UUd-DP-h1T" firstAttribute="centerY" secondItem="9OB-lj-J94" secondAttribute="centerY" id="deA-lf-mot"/>
                                                     <constraint firstItem="cDA-af-PYN" firstAttribute="top" secondItem="OdL-iI-7qq" secondAttribute="bottom" constant="16" id="eNr-8c-rjL"/>
                                                     <constraint firstItem="OdL-iI-7qq" firstAttribute="top" secondItem="9OB-lj-J94" secondAttribute="bottom" constant="16" id="n0h-4N-kKe"/>
                                                     <constraint firstAttribute="bottom" secondItem="lVR-Ga-Afu" secondAttribute="bottom" constant="16" id="o7o-SI-nzp"/>
                                                     <constraint firstAttribute="trailing" secondItem="5rP-oh-lzV" secondAttribute="trailing" constant="16" id="oLP-RN-MDa"/>
+                                                    <constraint firstItem="cLa-sW-Mzp" firstAttribute="leading" secondItem="nRU-dV-f5Y" secondAttribute="trailing" constant="16" id="vqh-6L-PFo"/>
                                                     <constraint firstItem="lVR-Ga-Afu" firstAttribute="leading" secondItem="MBg-9s-GPA" secondAttribute="leading" constant="16" id="xKm-BV-ib7"/>
                                                     <constraint firstItem="OdL-iI-7qq" firstAttribute="leading" secondItem="MBg-9s-GPA" secondAttribute="leading" constant="16" id="yOR-PS-6xd"/>
+                                                    <constraint firstItem="cLa-sW-Mzp" firstAttribute="centerY" secondItem="nRU-dV-f5Y" secondAttribute="centerY" id="yTy-Wm-aoe"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
@@ -652,12 +712,20 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="actualCarbonLabel" destination="cLa-sW-Mzp" id="6Gk-Uo-Dwz"/>
+                        <outlet property="actualOxygenLabel" destination="SpF-E7-dl6" id="FLO-GW-ZEq"/>
                         <outlet property="emptyShopBannerView" destination="OdL-iI-7qq" id="yNy-CH-EaO"/>
                         <outlet property="limitFarmButton" destination="UfD-Tw-qS9" id="64I-yd-JT3"/>
+                        <outlet property="limitFarmCarbonButton" destination="pGZ-ZF-cm0" id="hzM-WR-kpQ"/>
+                        <outlet property="limitFarmCarbonLabel" destination="vbT-lk-I12" id="6Tp-qG-c7B"/>
                         <outlet property="limitFarmValueLabel" destination="uSf-Te-Sx1" id="PpW-wH-xpm"/>
                         <outlet property="oxygenBoostButton" destination="z7L-5l-CfE" id="bNk-ox-GSr"/>
+                        <outlet property="oxygenBoostCarbonButton" destination="RQs-BA-ZQf" id="pVS-Mk-Cgv"/>
+                        <outlet property="oxygenBoostCarbonLabel" destination="7tt-a6-IWh" id="LKB-8h-Bxd"/>
                         <outlet property="oxygenBoostValueLabel" destination="gU9-Fv-aMN" id="E2v-zT-LKP"/>
                         <outlet property="seedSpawnButton" destination="TTz-eH-pIr" id="CQm-kl-s2C"/>
+                        <outlet property="seedSpawnCarbonButton" destination="H2A-O4-VTp" id="Xbk-7g-byl"/>
+                        <outlet property="seedSpawnCarbonLabel" destination="9dX-ai-v18" id="BG5-T3-62k"/>
                         <outlet property="seedSpawnValueLabel" destination="hyG-D3-U1P" id="0Wk-5f-fEr"/>
                         <outlet property="shopCollectionView" destination="5rP-oh-lzV" id="xwc-By-cxu"/>
                     </connections>
@@ -769,7 +837,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5wI-RZ-cw2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1248" y="803"/>
+            <point key="canvasLocation" x="1246" y="814"/>
         </scene>
         <!--New Plant Pop Up View Controller-->
         <scene sceneID="aLV-EJ-zba">
@@ -921,16 +989,86 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="newPlantDesc" destination="6U8-9V-UAM" id="38e-cn-ehY"/>
-                        <outlet property="newPlantImage" destination="VpL-TA-2LR" id="qJo-do-uej"/>
-                        <outlet property="newPlantName" destination="Twr-OG-wkj" id="piV-6p-Uhp"/>
-                        <outlet property="newPlantTinyDesc" destination="cvs-x3-dYj" id="1zH-Xi-beF"/>
-                        <outlet property="oxygenProduction" destination="nBb-Pl-JAU" id="GJL-UT-tSK"/>
+                        <outlet property="newPlantDesc" destination="6U8-9V-UAM" id="YZq-r6-Lvx"/>
+                        <outlet property="newPlantImage" destination="VpL-TA-2LR" id="yhw-PK-8bb"/>
+                        <outlet property="newPlantName" destination="Twr-OG-wkj" id="J83-pk-7Qd"/>
+                        <outlet property="newPlantTinyDesc" destination="cvs-x3-dYj" id="Krb-Q5-hcV"/>
+                        <outlet property="oxygenProduction" destination="nBb-Pl-JAU" id="1sQ-ht-z2e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bhj-HQ-xhQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-301" y="98"/>
+            <point key="canvasLocation" x="-301.44927536231887" y="97.767857142857139"/>
+        </scene>
+        <!--Limit Plants View Controller-->
+        <scene sceneID="Luq-5D-d1R">
+            <objects>
+                <viewController storyboardIdentifier="limitVC" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="WK2-Al-J9N" customClass="limitPlantsViewController" customModule="Plant_Domination" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DmL-yh-OIR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sadTomato" translatesAutoresizingMaskIntoConstraints="NO" id="kDF-px-51c">
+                                <rect key="frame" x="87" y="406" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="240" id="h4O-nu-gH7"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="98g-B6-uvo">
+                                <rect key="frame" x="64" y="710" width="286" height="55"/>
+                                <color key="backgroundColor" red="0.63806408640000001" green="0.84056138989999996" blue="0.43913438919999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="p9I-Vq-jdd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="voltar para minha fazenda"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="returnToFarm:" destination="WK2-Al-J9N" eventType="touchUpInside" id="fyl-LD-VRv"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A próxima evolução está indisponível" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aj9-CX-HvI">
+                                <rect key="frame" x="64" y="140" width="286" height="129"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Logo, mais plantas bizarras estarão presentes na próxima atualização!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k8J-th-OdG">
+                                <rect key="frame" x="64" y="301" width="286" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="tsg-0F-Cic"/>
+                        <color key="backgroundColor" red="0.27396270630000003" green="0.34069055320000002" blue="0.87063491339999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="Aj9-CX-HvI" firstAttribute="leading" secondItem="tsg-0F-Cic" secondAttribute="leading" constant="64" id="23G-MQ-EbY"/>
+                            <constraint firstItem="tsg-0F-Cic" firstAttribute="trailing" secondItem="98g-B6-uvo" secondAttribute="trailing" constant="64" id="8Hl-74-TlV"/>
+                            <constraint firstItem="k8J-th-OdG" firstAttribute="leading" secondItem="tsg-0F-Cic" secondAttribute="leading" constant="64" id="9o7-Em-1KD"/>
+                            <constraint firstItem="tsg-0F-Cic" firstAttribute="trailing" secondItem="k8J-th-OdG" secondAttribute="trailing" constant="64" id="Adj-CE-dUu"/>
+                            <constraint firstItem="Aj9-CX-HvI" firstAttribute="top" secondItem="tsg-0F-Cic" secondAttribute="top" constant="96" id="GAf-el-web"/>
+                            <constraint firstItem="98g-B6-uvo" firstAttribute="leading" secondItem="tsg-0F-Cic" secondAttribute="leading" constant="64" id="JUr-aw-Ngs"/>
+                            <constraint firstItem="kDF-px-51c" firstAttribute="leading" secondItem="tsg-0F-Cic" secondAttribute="leading" constant="87" id="N9m-WJ-dyJ"/>
+                            <constraint firstItem="kDF-px-51c" firstAttribute="top" secondItem="k8J-th-OdG" secondAttribute="bottom" constant="64" id="OKv-F6-EH4"/>
+                            <constraint firstItem="tsg-0F-Cic" firstAttribute="trailing" secondItem="Aj9-CX-HvI" secondAttribute="trailing" constant="64" id="XxD-EJ-eVy"/>
+                            <constraint firstItem="k8J-th-OdG" firstAttribute="top" secondItem="Aj9-CX-HvI" secondAttribute="bottom" constant="32" id="bkx-4q-obF"/>
+                            <constraint firstItem="tsg-0F-Cic" firstAttribute="trailing" secondItem="kDF-px-51c" secondAttribute="trailing" constant="87" id="iUt-D6-4pd"/>
+                            <constraint firstItem="98g-B6-uvo" firstAttribute="top" secondItem="kDF-px-51c" secondAttribute="bottom" constant="64" id="mLg-Vy-naz"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="80x-Hq-N3T" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-301" y="1535"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ugu-qc-2Kj">
@@ -1136,12 +1274,13 @@
     <resources>
         <image name="Brotinho" width="65" height="85"/>
         <image name="CarbomShopIcon" width="164" height="253"/>
-        <image name="carboncredit" width="31" height="35"/>
+        <image name="carboncredit" width="345" height="345"/>
         <image name="close" width="44" height="44"/>
         <image name="fence" width="375" height="145"/>
         <image name="o2" width="82" height="82"/>
         <image name="oxygenUpgradeIcon" width="72" height="67"/>
         <image name="plantPedia" width="83" height="83"/>
+        <image name="sadTomato" width="199" height="241"/>
         <image name="seedUpgradeIcon" width="89" height="75"/>
         <image name="shopButton" width="83" height="83"/>
     </resources>

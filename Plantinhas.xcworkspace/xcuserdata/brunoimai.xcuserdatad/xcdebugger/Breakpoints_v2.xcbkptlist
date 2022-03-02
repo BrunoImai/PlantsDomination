@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "C1620521-42D6-4F64-ABE4-9BC7DEA7C867"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7A6099B1-D60B-4BC1-BEC3-B88892344811"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Gamelogic/AppDelegate.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "application(_:didFinishLaunchingWithOptions:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4C9F25DD-5C61-4FED-A29F-8DC13804AFBF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Views/NewPlantPopUpViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "NewPlantPopUpViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "4C9F25DD-5C61-4FED-A29F-8DC13804AFBF - dc8fca843d9b9693"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Plant_Domination.NewPlantPopUpViewController.newPlantImage.getter : Swift.Optional&lt;__C.UIImageView&gt;"
+                  moduleName = "Plant Domination"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/brunoimai/Documents/GitHub/PlantsDomination/Views/NewPlantPopUpViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "85">
+               </Location>
+               <Location
+                  uuid = "4C9F25DD-5C61-4FED-A29F-8DC13804AFBF - 76c06ac50a93320f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Plant_Domination.NewPlantPopUpViewController.newPlantImage.setter : Swift.Optional&lt;__C.UIImageView&gt;"
+                  moduleName = "Plant Domination"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/brunoimai/Documents/GitHub/PlantsDomination/Views/NewPlantPopUpViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "136">
+               </Location>
+               <Location
+                  uuid = "4C9F25DD-5C61-4FED-A29F-8DC13804AFBF - 4c5606a2e8ed21e1"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Plant_Domination.NewPlantPopUpViewController.newPlantImage.modify : Swift.Optional&lt;__C.UIImageView&gt;"
+                  moduleName = "Plant Domination"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/brunoimai/Documents/GitHub/PlantsDomination/Views/NewPlantPopUpViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  uuid = "4C9F25DD-5C61-4FED-A29F-8DC13804AFBF - 9691f334753b6746"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Plant_Domination.NewPlantPopUpViewController.newPlantImage.modify : Swift.Optional&lt;__C.UIImageView&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "Plant Domination"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/brunoimai/Documents/GitHub/PlantsDomination/Views/NewPlantPopUpViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "26">
+               </Location>
+               <Location
+                  uuid = "4C9F25DD-5C61-4FED-A29F-8DC13804AFBF - e273b093b22876aa"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Plant_Domination.NewPlantPopUpViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Plant_Domination.NewPlantPopUpViewController"
+                  moduleName = "Plant Domination"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/brunoimai/Documents/GitHub/PlantsDomination/Views/NewPlantPopUpViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "161">
+               </Location>
+               <Location
+                  uuid = "4C9F25DD-5C61-4FED-A29F-8DC13804AFBF - 743525eb9e0c09b9"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Plant_Domination.NewPlantPopUpViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Plant_Domination.NewPlantPopUpViewController&gt;"
+                  moduleName = "Plant Domination"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/brunoimai/Documents/GitHub/PlantsDomination/Views/NewPlantPopUpViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "118">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1EE7E393-DABC-40DD-AD04-7051F66DFED6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Views/NewPlantPopUpViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "NewPlantPopUpViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "1EE7E393-DABC-40DD-AD04-7051F66DFED6 - 4ef46920b254cc26"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Plant_Domination.NewPlantPopUpViewController.newPlantName.getter : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "Plant Domination"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/brunoimai/Documents/GitHub/PlantsDomination/Views/NewPlantPopUpViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "85">
+               </Location>
+               <Location
+                  uuid = "1EE7E393-DABC-40DD-AD04-7051F66DFED6 - d2de91eadaa903a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Plant_Domination.NewPlantPopUpViewController.newPlantName.setter : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "Plant Domination"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/brunoimai/Documents/GitHub/PlantsDomination/Views/NewPlantPopUpViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "136">
+               </Location>
+               <Location
+                  uuid = "1EE7E393-DABC-40DD-AD04-7051F66DFED6 - 71ce5d5b5e168917"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Plant_Domination.NewPlantPopUpViewController.newPlantName.modify : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "Plant Domination"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/brunoimai/Documents/GitHub/PlantsDomination/Views/NewPlantPopUpViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  uuid = "1EE7E393-DABC-40DD-AD04-7051F66DFED6 - ab05494415d470a7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Plant_Domination.NewPlantPopUpViewController.newPlantName.modify : Swift.Optional&lt;__C.UILabel&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "Plant Domination"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/brunoimai/Documents/GitHub/PlantsDomination/Views/NewPlantPopUpViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "26">
+               </Location>
+               <Location
+                  uuid = "1EE7E393-DABC-40DD-AD04-7051F66DFED6 - e273b093b22876cd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Plant_Domination.NewPlantPopUpViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; Plant_Domination.NewPlantPopUpViewController"
+                  moduleName = "Plant Domination"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/brunoimai/Documents/GitHub/PlantsDomination/Views/NewPlantPopUpViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "204">
+               </Location>
+               <Location
+                  uuid = "1EE7E393-DABC-40DD-AD04-7051F66DFED6 - 743525eb9e0c09de"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Plant_Domination.NewPlantPopUpViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;Plant_Domination.NewPlantPopUpViewController&gt;"
+                  moduleName = "Plant Domination"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/brunoimai/Documents/GitHub/PlantsDomination/Views/NewPlantPopUpViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "161">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4AE89311-6CDA-40D8-86D1-D5FB0038D648"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Views/NewPlantPopUpViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6AFBEAD8-D612-47B7-B03A-02B6528701F1"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Views/NewPlantPopUpViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

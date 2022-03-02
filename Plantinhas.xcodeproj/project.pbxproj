@@ -36,6 +36,7 @@
 		0EED4C4227BA9FFA0054FE04 /* fuse.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0EED4C4127BA9FFA0054FE04 /* fuse.wav */; };
 		0EED4C4427BC3BBC0054FE04 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0EED4C4327BC3BBC0054FE04 /* Onboarding.storyboard */; };
 		0EF40D4B27B92ED700DA3C9A /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EF40D4A27B92ED700DA3C9A /* GameKit.framework */; };
+		0EF4456F27CFAF100008480B /* limitPlantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EF4456E27CFAF100008480B /* limitPlantsViewController.swift */; };
 		650A67648ACE1BE828F3A7D4 /* Pods_Plantinhas.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8120E8CB3EFEEEE338D997E2 /* Pods_Plantinhas.framework */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +72,7 @@
 		0EED4C4127BA9FFA0054FE04 /* fuse.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = fuse.wav; sourceTree = "<group>"; };
 		0EED4C4327BC3BBC0054FE04 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		0EF40D4A27B92ED700DA3C9A /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		0EF4456E27CFAF100008480B /* limitPlantsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = limitPlantsViewController.swift; sourceTree = "<group>"; };
 		66B982A7E946AFF7693390B7 /* Pods-Plantinhas.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Plantinhas.debug.xcconfig"; path = "Target Support Files/Pods-Plantinhas/Pods-Plantinhas.debug.xcconfig"; sourceTree = "<group>"; };
 		8120E8CB3EFEEEE338D997E2 /* Pods_Plantinhas.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Plantinhas.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C820623215C790CDD65044E5 /* Pods-Plantinhas.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Plantinhas.release.xcconfig"; path = "Target Support Files/Pods-Plantinhas/Pods-Plantinhas.release.xcconfig"; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				0E535C6927C6615400919D18 /* ShopPopUpViewController.swift */,
 				0E535C6B27C6A6D200919D18 /* PediaPopUpViewController.swift */,
 				0E535C6D27C6AD9100919D18 /* NewPlantPopUpViewController.swift */,
+				0EF4456E27CFAF100008480B /* limitPlantsViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -347,6 +350,7 @@
 				0B28C55E27B5914000293048 /* OnBoardingViewController.swift in Sources */,
 				0E8EFBBB27A9685800466722 /* GameManager.swift in Sources */,
 				0E535C6C27C6A6D200919D18 /* PediaPopUpViewController.swift in Sources */,
+				0EF4456F27CFAF100008480B /* limitPlantsViewController.swift in Sources */,
 				0E8EFBBD27A9687B00466722 /* Shop.swift in Sources */,
 				0E3D0BEC27A206BF00266507 /* GameViewController.swift in Sources */,
 				0E6D653327B5908D0034EF4A /* PlantPediaCollectionViewCell.swift in Sources */,

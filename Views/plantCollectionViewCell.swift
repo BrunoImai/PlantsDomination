@@ -33,6 +33,7 @@ class plantCollectionViewCell: UICollectionViewCell {
         plantImage.image = nil
         plantNameOutlet.text = nil
         oxygenPrice.text = nil
+        carbonPrice.text = nil
         
         // colocar cores fonte etc
         // Setar coisas que mudam para nulo
@@ -43,7 +44,7 @@ class plantCollectionViewCell: UICollectionViewCell {
         plantImage.image = nil
         plantNameOutlet.text = nil
         oxygenPrice.text = nil
-        
+        carbonPrice.text = nil
         // Colocar tudo nulo dnv as coisas do awake from inib
     }
 
@@ -53,15 +54,19 @@ class plantCollectionViewCell: UICollectionViewCell {
         plantImage.image = UIImage.init(named: plant.name)
         plantNameOutlet.text = plant.name
         
-        let plantPrice = GameManager.shared.shop.plantsValue[plant.name]!
-        oxygenPrice.text = formatNumber(plantPrice)
-        updateUIBuyButton(plantPrice, buyButtonOxygen)
+        let plantOxygenPrice = GameManager.shared.shop.plantsOxygenValue[plant.name]!
+        oxygenPrice.text = formatNumber(plantOxygenPrice)
+        updateUIOxygenBuyButton(plantOxygenPrice, buyButtonOxygen)
+
+        let plantCarbonPrice = GameManager.shared.shop.plantsCarbonValue[plant.name]!
+        carbonPrice.text = formatNumber(Double(plantCarbonPrice))
+        updateUICarbonBuyButton(plantCarbonPrice, buyButtonCarbon)
         
         maxWidth = 125
         // setup recebe os parametros e mudam as coisas
     }
     
-    func updateUIBuyButton(_ value : Double, _ button : UIButton) {
+    func updateUIOxygenBuyButton(_ value : Double, _ button : UIButton) {
         if value <= GameManager.shared.actualOxygen {
                 button.backgroundColor = #colorLiteral(red: 0.5792971253, green: 0.8477756381, blue: 0.3774493635, alpha: 1)
         } else {
@@ -69,9 +74,17 @@ class plantCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    func canPurchase() -> Bool{
+    func updateUICarbonBuyButton(_ value : Int, _ button : UIButton) {
+        if value <= GameManager.shared.carbonCredits {
+                button.backgroundColor = #colorLiteral(red: 0.5792971253, green: 0.8477756381, blue: 0.3774493635, alpha: 1)
+        } else {
+            button.backgroundColor = #colorLiteral(red: 0.3489862084, green: 0.3490410447, blue: 0.3489741683, alpha: 1)
+        }
+    }
+    
+    func canPurchaseOxygen() -> Bool{
         
-        let plantPrice = GameManager.shared.shop.plantsValue[plantInCell!.name]!
+        let plantPrice = GameManager.shared.shop.plantsOxygenValue[plantInCell!.name]!
         if plantPrice <= GameManager.shared.actualOxygen {
             if (GameManager.shared.gameScene?.plantInScene.count)! < GameManager.shared.plantLimit {
                 return true
@@ -81,24 +94,51 @@ class plantCollectionViewCell: UICollectionViewCell {
                 
         } else {
             GameManager.shared.controller!.showToast(message: "Oxigênio insuficiente", font: .systemFont(ofSize: 12))
-                
-            
         }
         return false
     }
+    
+    func canPurchaseCarbon() -> Bool {
+        
+        let plantPrice = GameManager.shared.shop.plantsCarbonValue[plantInCell!.name]!
+        if plantPrice <= GameManager.shared.carbonCredits {
+            if (GameManager.shared.gameScene?.plantInScene.count)! < GameManager.shared.plantLimit {
+                return true
+            } else {
+                GameManager.shared.controller!.showToast(message: "Limite de plantas na fazenda atingido!", font: .systemFont(ofSize: 12))
+            }
+                
+        } else {
+            GameManager.shared.controller!.showToast(message: "Créditos de Carbono insuficientes", font: .systemFont(ofSize: 12))
+        }
+        return false
+    }
+    
     @IBAction func buyPlant(_ sender: Any) {
         
-        let plantPrice = GameManager.shared.shop.plantsValue[plantInCell!.name]!
-        if canPurchase() {
+        let plantPrice = GameManager.shared.shop.plantsOxygenValue[plantInCell!.name]!
+        if canPurchaseOxygen() {
             GameManager.shared.actualOxygen -= plantPrice
             GameManager.shared.gameScene?.spawnPlant(plant: plantInCell!)
-            GameManager.shared.shop.updatePlantPrice(plantInCell!.name, plantPrice)
+            GameManager.shared.shop.updatePlantOxygenPrice(plantInCell!.name, plantPrice)
             GameManager.shared.gameScene?.playEffect("buy", "wav")
             
         }
             
-        updateUIBuyButton(plantPrice, buyButtonOxygen)
+        updateUIOxygenBuyButton(plantPrice, buyButtonOxygen)
         
+    }
+    @IBAction func buyPlantCarbon(_ sender: Any) {
+        let plantPrice = GameManager.shared.shop.plantsCarbonValue[plantInCell!.name]!
+        if canPurchaseCarbon() {
+            GameManager.shared.carbonCredits -= plantPrice
+            GameManager.shared.gameScene?.spawnPlant(plant: plantInCell!)
+            GameManager.shared.shop.updatePlantCarbonPrice(plantInCell!.name, plantPrice)
+            GameManager.shared.gameScene?.playEffect("buy", "wav")
+            
+        }
+            
+        updateUICarbonBuyButton(plantPrice, buyButtonCarbon)
     }
     
 }

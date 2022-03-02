@@ -13,16 +13,26 @@ class ShopPopUpViewController: UIViewController, UICollectionViewDelegate {
 
     @IBOutlet weak var emptyShopBannerView: UIView!
     
+    @IBOutlet weak var actualOxygenLabel: UILabel!
+    @IBOutlet weak var actualCarbonLabel: UILabel!
+    
     @IBOutlet weak var limitFarmButton: UIButton!
     @IBOutlet weak var seedSpawnButton: UIButton!
     @IBOutlet weak var oxygenBoostButton: UIButton!
-
+    
+    @IBOutlet weak var limitFarmCarbonButton: UIButton!
+    @IBOutlet weak var seedSpawnCarbonButton: UIButton!
+    @IBOutlet weak var oxygenBoostCarbonButton: UIButton!
+    
     @IBOutlet weak var limitFarmValueLabel: UILabel!
     @IBOutlet weak var seedSpawnValueLabel: UILabel!
     @IBOutlet weak var oxygenBoostValueLabel: UILabel!
 
-    var currentGame: GameScene!
+    @IBOutlet weak var limitFarmCarbonLabel: UILabel!
+    @IBOutlet weak var seedSpawnCarbonLabel: UILabel!
+    @IBOutlet weak var oxygenBoostCarbonLabel: UILabel!
     
+    var currentGame: GameScene!
     
     @IBOutlet weak var shopCollectionView: UICollectionView!{
         didSet {
@@ -49,20 +59,34 @@ class ShopPopUpViewController: UIViewController, UICollectionViewDelegate {
         let oxygenBoostUpgradeValue = GameManager.shared.shop.oxygenBoostUpgradeValue
         let seedSpawnUpgradeValue = GameManager.shared.shop.seedSpawnUpgradeValue
         
+        let farmLimitUpgradeCarbonValue = GameManager.shared.shop.farmLimitUpgradeCarbonValue
+        let oxygenBoostUpgradeCarbonValue = GameManager.shared.shop.oxygenBoostUpgradeCarbonValue
+        let seedSpawnUpgradeCarbonValue = GameManager.shared.shop.seedSpawnUpgradeCarbonValue
+
         limitFarmValueLabel.text = formatNumber(farmLimitUpgradeValue)
         oxygenBoostValueLabel.text = formatNumber(oxygenBoostUpgradeValue)
         seedSpawnValueLabel.text = formatNumber(seedSpawnUpgradeValue)
         
+        limitFarmCarbonLabel.text = String(farmLimitUpgradeCarbonValue)
+        oxygenBoostCarbonLabel.text = String(oxygenBoostUpgradeCarbonValue)
+        seedSpawnCarbonLabel.text = String(seedSpawnUpgradeCarbonValue)
+        
         canPurchase(farmLimitUpgradeValue, limitFarmButton)
         canPurchase(oxygenBoostUpgradeValue, oxygenBoostButton)
         canPurchase(seedSpawnUpgradeValue, seedSpawnButton)
+        
+        canPurchaseCarbon(farmLimitUpgradeCarbonValue, limitFarmCarbonButton)
+        canPurchaseCarbon(oxygenBoostUpgradeCarbonValue, oxygenBoostCarbonButton)
+        canPurchaseCarbon(seedSpawnUpgradeCarbonValue, seedSpawnCarbonButton)
         
         if GameManager.shared.plantsDiscovered.isEmpty {
             emptyShopBannerView.isHidden = false
         } else {
             emptyShopBannerView.isHidden = true
         }
-
+        
+        setCoinsUI()
+        
     }
     
     func canPurchase(_ value : Double, _ button : UIButton) {
@@ -75,6 +99,15 @@ class ShopPopUpViewController: UIViewController, UICollectionViewDelegate {
         }
     }
     
+    func canPurchaseCarbon(_ value : Int, _ button : UIButton) {
+        if value <= GameManager.shared.carbonCredits {
+            button.backgroundColor = #colorLiteral(red: 0.5792971253, green: 0.8477756381, blue: 0.3774493635, alpha: 1)
+            button.isUserInteractionEnabled = true
+        } else {
+            button.backgroundColor = #colorLiteral(red: 0.3489862084, green: 0.3490410447, blue: 0.3489741683, alpha: 1)
+            button.isUserInteractionEnabled = false
+        }
+    }
     
     @IBAction func closePopUP(_ sender: Any) {
         self.dismiss(animated: true)
@@ -92,15 +125,22 @@ class ShopPopUpViewController: UIViewController, UICollectionViewDelegate {
         GameManager.shared.shop.oxygenBoostUpgrade()
 
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func buyOxygenBoostUpgradeCarbon(_ sender: Any) {
+        GameManager.shared.shop.oxygenBoostCarbonUpgrade()
     }
-    */
+    @IBAction func buySeedSpawnCarbonUpgrade(_ sender: Any) {
+        GameManager.shared.shop.seedSpawnTimeCarbonUpgrade()
+    }
+    @IBAction func buyLimitCarbonUpgrade(_ sender: Any) {
+        GameManager.shared.shop.farmLimitCarbonUpgrade()
+    }
+    
+    func setCoinsUI() {
+        let oxygen = formatNumber(GameManager.shared.actualOxygen)
+        actualOxygenLabel.text = oxygen
+    
+        actualCarbonLabel.text = String(GameManager.shared.carbonCredits)
+    }
     
 }
 

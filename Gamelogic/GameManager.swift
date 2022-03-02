@@ -6,10 +6,12 @@
 //
 
 import Foundation
+import UIKit
 
 class GameManager{
     
     var actualOxygen = 0.0
+    var carbonCredits = 0
     
     var plantLimit = 8
     var spawnTime = 4.0
@@ -27,18 +29,20 @@ class GameManager{
     
     var plantsDiscovered : [Plant] = []
     
+    var newPlantVC : NewPlantPopUpViewController?
+    
     func checkNewPlants(_ newPlant : Plant) {
             let plantsAnalyzed = plantsDiscovered.filter {$0.name == newPlant.name}
         
-            if plantsAnalyzed.isEmpty {
+        if plantsAnalyzed.isEmpty {
                 plantsDiscovered.append(newPlant)
                 print("Planta: ", newPlant.name, " descoberta!")
                 
-                shop.setPlantPrice(newPlant.name, newPlant.oxygenProduction * 250)
+                shop.setPlantOxygenPrice(newPlant.name, newPlant.oxygenProduction * 250)
+                shop.setPlantCarbonPrice(newPlant.name, plantsDiscovered.count * 10)
                 
-//MARK: REVISAR ERRO NEWPLANT POPUP
-                //gameScene?.popUpNewPlantVC!.setPlantAchived(newPlant)
-                
+                newPlantVC!.setPlantAchived(newPlant)
+                controller?.show(newPlantVC!, sender: self)
         }
     }
     
@@ -58,6 +62,7 @@ class GameManager{
     
     func saveGame() {
         save(actualOxygen, key: "actualOxygen")
+        save(carbonCredits, key: "carbonCredits")
         
         let encodedPlantsDiscovered = try! NSKeyedArchiver.archivedData(withRootObject: plantsDiscovered, requiringSecureCoding: false)
         save(encodedPlantsDiscovered, key: "plantsDiscovered")
@@ -69,7 +74,8 @@ class GameManager{
         save(spawnTime, key: "spawnTime")
         save(oxygenBoost, key: "oxygenBoost")
         
-        save(shop.plantsValue, key: "plantsValue")
+        save(shop.plantsOxygenValue, key: "plantsOxygenValue")
+        save(shop.plantsCarbonValue, key: "plantsCarbonValue")
         save(shop.oxygenBoostUpgradeValue, key: "oxygenBoostUpgradeValue")
         save(shop.farmLimitUpgradeValue, key: "farmLimitUpgradeValue")
         save(shop.seedSpawnUpgradeValue, key: "seedSpawnUpgradeValue")

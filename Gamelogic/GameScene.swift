@@ -25,31 +25,6 @@ class GameScene: SKScene {
     var backgroundMusic: SKAudioNode!
 
     override func didMove(to view: SKView) {
-        
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "popUpNewPlantVC") as! NewPlantPopUpViewController
-print ("""
-
-ENTROU NA SCENE
-
-
-""")
-        
-        print(vc.restorationIdentifier)
-        
-        print ("""
-
-        
-        
-        
-        
-        
-        
-        ENTROU NA SCENE
-
-
-        """)
-        self.popUpNewPlantVC = vc
     
         background = self.childNode(withName: "background1") as? SKSpriteNode
         background?.name = "background"
@@ -107,7 +82,9 @@ ENTROU NA SCENE
             if currentNode != nil {
                 for plant in plantInScene {
                     if currentNode!.contains(plant.node.position) && currentNode! != plant.node {
-                        if plant.node.name == currentNode!.name && currentNode!.name != "seed" {
+                        if plant.node.name == currentNode!.name &&
+                            currentNode!.name != "seed" {
+                        
                             collisionBetween(plant, currentNode!)
                             break
                         }
@@ -231,7 +208,9 @@ ENTROU NA SCENE
     
     func fusePlant(father: Plant) {
         
-            let plantType = plantType(father.name)
+        let plantType = plantType(father.name)
+        
+        if plantType != "erro" {
         
             let oxygeProduction = plantValue(father)
         
@@ -246,14 +225,22 @@ ENTROU NA SCENE
             plantInScene.append(plant)
             addChild(plant.node)
             playEffect("fuse", "wav")
+            
+        }
     }
     
     func collisionBetween(_ plant1: Plant, _ plantDragged: SKNode) {
-            
-        removePlant(plant1.node)
-        removePlant(plantDragged)
-            
-        fusePlant(father: plant1)
+        let plantType = plantType(plant1.name)
+        
+        if plantType != "erro" {
+            removePlant(plant1.node)
+            removePlant(plantDragged)
+            fusePlant(father: plant1)
+        } else {
+            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let newViewController = storyBoard.instantiateViewController(withIdentifier: "limitVC") as! limitPlantsViewController
+            gameVC!.present(newViewController, animated: true)
+        }
     }
     
     func removePlant(_ plantNode: SKNode) {
@@ -303,7 +290,7 @@ ENTROU NA SCENE
                 return "Magibóbora"
             
             default:
-                return "plant10"
+                return "erro"
             }
     }
     
@@ -345,6 +332,7 @@ ENTROU NA SCENE
     
     func loadGame() {
         GameManager.shared.actualOxygen = defaults.object(forKey:"actualOxygen") as! Double
+        GameManager.shared.carbonCredits = defaults.object(forKey:"carbonCredits") as! Int
         
         let decodedPlantsDiscovered = defaults.data(forKey: "plantsDiscovered")
         let plants = NSKeyedUnarchiver.unarchiveObject(with: decodedPlantsDiscovered!) as! [Plant]
@@ -364,8 +352,8 @@ ENTROU NA SCENE
         GameManager.shared.seedSpawnUpgradeValue = defaults.object(forKey: "seedSpawnUpgradeValue") as! Double
         GameManager.shared.oxygenBoostUpgradeValue = defaults.object(forKey: "farmLimitUpgradeValue") as! Double
         
-        GameManager.shared.shop.plantsValue = defaults.object(forKey: "plantsValue") as! [String : Double]
-        
+        GameManager.shared.shop.plantsOxygenValue = defaults.object(forKey: "plantsOxygenValue") as! [String : Double]
+        GameManager.shared.shop.plantsCarbonValue = defaults.object(forKey: "plantsCarbonValue") as! [String : Int]
         for plant in GameManager.shared.gameScene!.plantInScene {
             addChild(plant.node)
             plant.setDesc()

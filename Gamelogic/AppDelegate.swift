@@ -16,6 +16,7 @@ import AdSupport
 import FirebaseAnalytics
 import FBAudienceNetwork
 import Firebase
+import GoogleMobileAds
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -37,6 +38,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 self.window?.rootViewController = viewController
                 self.window?.makeKeyAndVisible()
         }
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        GameManager.shared.newPlantVC =  storyboard.instantiateViewController(withIdentifier: "popUpNewPlantVC") as? NewPlantPopUpViewController
         
         ApplicationDelegate.shared.application(
                             application,
@@ -48,6 +51,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FBAdSettings.setAdvertiserTrackingEnabled(true)
         
         FirebaseApp.configure()
+        
+        GADMobileAds.sharedInstance().start(completionHandler: nil)
         return true
     }
 

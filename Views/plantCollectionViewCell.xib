@@ -126,6 +126,9 @@
                                         <integer key="value" value="8"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="buyPlantCarbon:" destination="gTV-IL-0wX" eventType="touchUpInside" id="gfN-Z0-AwY"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.9288107753" green="1" blue="0.8391927481" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -190,7 +193,7 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="carboncredit" width="31" height="35"/>
+        <image name="carboncredit" width="345" height="345"/>
         <image name="o2" width="82" height="82"/>
     </resources>
 </document>
