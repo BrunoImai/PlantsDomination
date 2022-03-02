@@ -78,6 +78,7 @@ class GameViewController: UIViewController {
                 self.rewardedAD = ad
                 self.rewardedAD?.fullScreenContentDelegate = self
                 return
+                
             }
             print("Rewarded ad failed to load with error: ", error)
         }
