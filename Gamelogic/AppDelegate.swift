@@ -101,8 +101,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         // and we are authorized
                         
                         FBAdSettings.setAdvertiserTrackingEnabled(true)
-                        Settings.isAutoLogAppEventsEnabled = true
-                        Settings.isAdvertiserIDCollectionEnabled = true
+
                         Analytics.setUserProperty("true",
                         forName: AnalyticsUserPropertyAllowAdPersonalizationSignals)
                                             Analytics.setAnalyticsCollectionEnabled(true)
@@ -113,8 +112,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         // shown and permission is denied
                         
                         FBAdSettings.setAdvertiserTrackingEnabled(false)
-                        Settings.isAutoLogAppEventsEnabled = false
-                        Settings.isAdvertiserIDCollectionEnabled = false
+
                         Analytics.setUserProperty("false",
                         forName: AnalyticsUserPropertyAllowAdPersonalizationSignals)
                                             Analytics.setAnalyticsCollectionEnabled(false)
