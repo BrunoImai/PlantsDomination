@@ -48,8 +48,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FBAudienceNetworkAds.initialize(with: nil, completionHandler: nil)
 
             // Pass user's consent after acquiring it. For sample app purposes, this is set to YES.
-        FBAdSettings.setAdvertiserTrackingEnabled(true)
-        
         FirebaseApp.configure()
         
         GADMobileAds.sharedInstance().start(completionHandler: nil)
@@ -92,30 +90,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func requestDataPermission() {
             if #available(iOS 14, *) {
-                
-                
                 ATTrackingManager.requestTrackingAuthorization(completionHandler: { status in
                     switch status {
                     case .authorized:
-                        // Tracking authorization dialog was shown
-                        // and we are authorized
-                        
+                     
                         FBAdSettings.setAdvertiserTrackingEnabled(true)
-
+                        Settings.shared.isAutoLogAppEventsEnabled = true
+                        Settings.shared.isAdvertiserIDCollectionEnabled = true
                         Analytics.setUserProperty("true",
-                        forName: AnalyticsUserPropertyAllowAdPersonalizationSignals)
-                                            Analytics.setAnalyticsCollectionEnabled(true)
-                        
+    forName: AnalyticsUserPropertyAllowAdPersonalizationSignals)
+                        Analytics.setAnalyticsCollectionEnabled(true)
                         print("Authorized")
                     case .denied:
-                        // Tracking authorization dialog was
-                        // shown and permission is denied
-                        
+                 
                         FBAdSettings.setAdvertiserTrackingEnabled(false)
-
-                        Analytics.setUserProperty("false",
-                        forName: AnalyticsUserPropertyAllowAdPersonalizationSignals)
-                                            Analytics.setAnalyticsCollectionEnabled(false)
+                        Settings.shared.isAutoLogAppEventsEnabled = false
+                        Settings.shared.isAdvertiserIDCollectionEnabled = false
+                                            Analytics.setUserProperty("false",
+    forName: AnalyticsUserPropertyAllowAdPersonalizationSignals)
+                        Analytics.setAnalyticsCollectionEnabled(false)
                         print("Denied")
                     case .notDetermined:
                         // Tracking authorization dialog has not been shown

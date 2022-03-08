@@ -159,7 +159,6 @@
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
                                                                 <connections>
-                                                                    <action selector="buyLimitUpgrade:" destination="BV1-FR-VrT" eventType="touchUpInside" id="Fhr-Z1-Y6i"/>
                                                                     <action selector="buyLimitUpgrade:" destination="ept-Tw-nvG" eventType="touchUpInside" id="h9Z-ta-nOq"/>
                                                                 </connections>
                                                             </button>

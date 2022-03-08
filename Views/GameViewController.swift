@@ -127,7 +127,7 @@ extension GameViewController : GADFullScreenContentDelegate {
         if let ad = rewardedAD {
             ad.present(fromRootViewController: self) {
                 //MARK: FAZER A LOGICA AQ
-                GameManager.shared.carbonCredits += 100
+                GameManager.shared.carbonCredits += 10
             }
         }
     }

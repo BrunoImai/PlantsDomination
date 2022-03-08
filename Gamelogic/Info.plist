@@ -2,6 +2,14 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+    <key>FIREBASE_ANALYTICS_COLLECTION_ENABLED</key>
+    <false/>
+    <key>FacebookAdvertiserIDCollectionEnabled</key>
+    <string>FALSE</string>
+    <key>FacebookAutoLogAppEventsEnabled</key>
+    <string>FALSE</string>
+    <key>NSUserTrackingUsageDescription</key>
+    <string>Need tracking for analytics and to deliver custom ads</string>
     <key>CFBundleURLTypes</key>
     <array>
       <dict>
@@ -33,6 +41,7 @@
 	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
+    
 	<key>GADApplicationIdentifier</key>
 	<string>ca-app-pub-2003885569288303~7465552740</string>
 	<key>LSRequiresIPhoneOS</key>

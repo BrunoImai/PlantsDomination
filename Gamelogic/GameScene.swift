@@ -8,6 +8,7 @@
 import SpriteKit
 import GameplayKit
 
+
 class GameScene: SKScene {
     
     let defaults = UserDefaults.standard
@@ -175,7 +176,7 @@ class GameScene: SKScene {
     func spawnFromSeed(_ seed: SKNode) {
         if  plantInScene.count <= GameManager.shared.plantLimit {
 
-            let plant = Plant(name: "Brotinho", oxygeProduction: 1.1)
+            let plant = Plant(name: "Brotinho", oxygeProduction: 0.9)
             
             plant.node.position = seed.position
             plant.setDesc()
@@ -331,6 +332,7 @@ class GameScene: SKScene {
     }
     
     func loadGame() {
+        
         GameManager.shared.actualOxygen = defaults.object(forKey:"actualOxygen") as! Double
         GameManager.shared.carbonCredits = defaults.object(forKey:"carbonCredits") as! Int
         
