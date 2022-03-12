@@ -2,27 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>FIREBASE_ANALYTICS_COLLECTION_ENABLED</key>
-    <false/>
-    <key>FacebookAdvertiserIDCollectionEnabled</key>
-    <string>FALSE</string>
-    <key>FacebookAutoLogAppEventsEnabled</key>
-    <string>FALSE</string>
-    <key>NSUserTrackingUsageDescription</key>
-    <string>Need tracking for analytics and to deliver custom ads</string>
-    <key>CFBundleURLTypes</key>
-    <array>
-      <dict>
-      <key>CFBundleURLSchemes</key>
-      <array>
-        <string>fb655300595789936</string>
-      </array>
-      </dict>
-    </array>
-    <key>FacebookAppID</key>
-    <string>655300595789936</string>
-    <key>FacebookDisplayName</key>
-    <string>Plant Domination</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -35,13 +14,31 @@
 	<string>$(PRODUCT_NAME)</string>
 	<key>CFBundlePackageType</key>
 	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
-    <key>FacebookClientToken</key>
-    <string>e21f64368554b1456e9015e71c54d69f</string>
 	<key>CFBundleShortVersionString</key>
 	<string>$(MARKETING_VERSION)</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb655300595789936</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
-    
+	<key>FIREBASE_ANALYTICS_COLLECTION_ENABLED</key>
+	<false/>
+	<key>FacebookAdvertiserIDCollectionEnabled</key>
+	<string>FALSE</string>
+	<key>FacebookAppID</key>
+	<string>655300595789936</string>
+	<key>FacebookAutoLogAppEventsEnabled</key>
+	<string>FALSE</string>
+	<key>FacebookClientToken</key>
+	<string>e21f64368554b1456e9015e71c54d69f</string>
+	<key>FacebookDisplayName</key>
+	<string>Plant Domination</string>
 	<key>GADApplicationIdentifier</key>
 	<string>ca-app-pub-2003885569288303~7465552740</string>
 	<key>LSRequiresIPhoneOS</key>

@@ -17,9 +17,9 @@ class OnBoardingViewController: UIViewController {
         didSet {
             pageControl.currentPage = currentPage
             if currentPage == slides.count - 1 {
-                nextButton.setTitle("começar", for:.normal)
+                nextButton.setTitle("Start", for:.normal)
             } else{
-                nextButton.setTitle("Próximo", for: .normal)
+                nextButton.setTitle("Next", for: .normal)
             }
         }
     }
@@ -31,11 +31,11 @@ class OnBoardingViewController: UIViewController {
         
         slides =  [
             
-            OnboardingSlide(title:"Plant Domination", description:"Olá fazendeiro! Domine o mundo e conquiste novas fazendas  com suas plantas mutantes", image: UIImage.init(named: "Brotinho")!),
+            OnboardingSlide(title:"Hello farmer!", description:"Thanks for agreeing to grow with our new Mutacorp experimental plants! Grow and produce as much oxygen as possible!", image: UIImage.init(named: "Sprouty")!),
             
-            OnboardingSlide(title:"As sementes mágicas vão surgir", description:"Clique nelas para as primeiras plantas brotarem", image: UIImage.init(named: "seed")!),
+            OnboardingSlide(title:"The magic seeds will emerge!", description:"Click on them for the first plants to sprout", image: UIImage.init(named: "seed")!),
             
-            OnboardingSlide(title:"Arraste e junte", description:"as plantas iguais para formar novas mutações de plantas que geram mais oxigênio, quanto mais você melhor! Compre upgrades para chegar ainda mais longe!", image: UIImage.init(named: "Fazengumelo")!),
+            OnboardingSlide(title:"Drag and join!", description:"Fuse same plants to form new plant mutations that generate more oxygen! Buy upgrades with oxygen to go even further!", image: UIImage.init(named: "Farmushroom")!),
         
         ]
         collectionView.delegate = self

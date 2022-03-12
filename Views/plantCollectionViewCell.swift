@@ -89,11 +89,11 @@ class plantCollectionViewCell: UICollectionViewCell {
             if (GameManager.shared.gameScene?.plantInScene.count)! < GameManager.shared.plantLimit {
                 return true
             } else {
-                GameManager.shared.controller!.showToast(message: "Limite de plantas na fazenda atingido!", font: .systemFont(ofSize: 12))
+                GameManager.shared.controller!.showToast(message: "Farm plant limit reached!", font: .systemFont(ofSize: 12))
             }
                 
         } else {
-            GameManager.shared.controller!.showToast(message: "Oxigênio insuficiente", font: .systemFont(ofSize: 12))
+            GameManager.shared.controller!.showToast(message: "Insufficient oxygen", font: .systemFont(ofSize: 12))
         }
         return false
     }
@@ -105,11 +105,11 @@ class plantCollectionViewCell: UICollectionViewCell {
             if (GameManager.shared.gameScene?.plantInScene.count)! < GameManager.shared.plantLimit {
                 return true
             } else {
-                GameManager.shared.controller!.showToast(message: "Limite de plantas na fazenda atingido!", font: .systemFont(ofSize: 12))
+                GameManager.shared.controller!.showToast(message: "Farm plant limit reached!", font: .systemFont(ofSize: 12))
             }
                 
         } else {
-            GameManager.shared.controller!.showToast(message: "Créditos de Carbono insuficientes", font: .systemFont(ofSize: 12))
+            GameManager.shared.controller!.showToast(message: "Insufficient Carbon Credit", font: .systemFont(ofSize: 12))
         }
         return false
     }

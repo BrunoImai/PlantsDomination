@@ -57,67 +57,115 @@ class Plant: NSObject, NSCoding  {
     
     func setDesc() {
         switch name {
-        case "Brotinho":
+        case "Sprouty":
             tinyDesc = "” ... ”"
             desc = """
-            "Parabéns pela sua primeira planta! O Brotin é um projeto de planta mutante, proveniente da Mutacorp! Não possui muitos diferenciais ainda mas tem muito potencial, temos certeza que logo limparemos o mundo um dia com ela!
+            "Congratulations on your first plant! The Sprouty is a mutant plant project, sourced from Mutacorp! It doesn't have many differentials yet but it has a lot of potential, we are sure that we will clean the world one day with it!"
             """
         
-        case "Brotervilha":
+        case "Happea":
             tinyDesc = "”awnma, awnma awnma?”"
-            desc = " Foi um espanto para todos no laboratório quando vimos que na zona de plantio experimental havia uma pequena forma de vida correndo alegre e fazendo barulhos fofos, demos o apelido de Brotervilha para o ”Brotus Ervilhescus”, ainda é um mistério seu surgimento, seria uma mutacao que não fora controlada? Ou uma evolução dos Brotin?"
-        
-        case "Florervilha":
-            tinyDesc = "”awnma, awnma!”"
-            desc = "Florervilha ou “Florae Ervilhescus” é simples, carismatica e perfeita. Melhorando muito a qualidade do ar do ambiente com sua flor ela consegue ser o perfeito equilibrio de beleza e utilidade!"
-        
-        case "Plantapet":
-            tinyDesc = "”Woof? Woof?”"
-            desc = "Após as Florervilhas se tornarem presenças comuns nas casas ao redor do mundo, mais uma mutação ocorreu, não se sabe se por estarem e ambiente com muitos animais domesticos a próxima geração de plantas assumiu uma forma parecida com um pet, a ”Domesticus Plantae” não é fofa?"
-        
-        case "Mangandante":
-            tinyDesc = "”Naum, naum!”"
             desc = """
-                        Mangandante ou “Mangus Falantis” foi a primeira mutação a falar, e também a primeira a deixar de ser completamente obediente, as vezes recusando a receber ordens de seus donos...
+            " It was a surprise to everyone in the lab when we saw that in the experimental planting zone there was a small life form running around happily and making cute noises, we gave the nickname Happea to the "Happys Peas", its existence is still a mystery, it would be a mutation that was not controlled? Or an evolution of Sprouty?"
+            """
+        
+        case "Bloom":
+            tinyDesc = "”awnma, awnma!”"
+            desc = "Bloom or “Peas Blooms” is simple, charismatic and perfect. By greatly improving the air quality of the environment with its flower, it can be the perfect balance of beauty and utility!"
+        
+        case "Puppea":
+            tinyDesc = "”Woof? Woof?”"
+            desc = "After Blooms became common presences in homes around the world, another mutation occurred, it is not known if because they were in an environment with many domestic animals, but the next generation of plants took on a pet-like form, the ”Domesticus Plantae” isn't it cute?"
+        
+        case "Manguspeaker":
+            tinyDesc = "”No, Nooo!”"
+            desc = """
+                    Manguspeaker or "Mangus Falantis" was the first mutation to speak, and also the first to stop being completely obedient, sometimes refusing to take orders from its owners...
 
-                        Quando está de bom humor produz um delicioso suco capaz de fazer qualquer um transpirar oxigênio!
+                    When he's in a good mood, he produces a delicious juice capable of making anyone sweat oxygen!
                     """
         
-        case "Doidomate":
-            tinyDesc = "'nao mexe comigo naum meu filho'"
+        case "Madmato":
+            tinyDesc = "'Don't mess with me buddy...'"
             
             desc = """
-            Segundo estudos científicos, a especie ”Tomatus Doidus” surge de uma mutacao poderosa. Também conhecido por sua fúria, é uma planta importante para aqueles que desejam conquistar o planeta pois libera uma boa quantidade de Oxigenio devido seus acessos de raiva.
+            According to scientific studies, the species "Tomatus Doidus" has a powerful mutation. Also known for its fury, it is an important plant for those who wish to conquer the planet as it releases a good amount of oxygen due to its tantrums.
+                        
+            A great ally, however, be careful, you don't want to fall victim to the insane tomato and its fury.
+            """
+        
+        case "Farmushroom":
+            tinyDesc = "”I can help with something?”"
+            desc = """
+            Everyone who has a Farmushroom in their house knows how incredible his help is, he helps in the garden, in the kitchen and even goes to the market! "Gumelo serventis" produces a lot of oxygen through its spore explosions, but there is still no information on how this can affect humans...
+            """
+        
+        case "Farmeradish":
+            tinyDesc = "”Let's plant more!”"
+            desc = """
+                    Farmeradish are excellent farmers and gardeners and can make a vegetable garden grow up to 50 times faster! They love to plant, they do it even without anyone asking! The species ”Rabanetus Plantae” is the first mutation to be able to cultivate other mutant plants, making the production of oxygen even more efficient.
+            """
+        
+        case "Melearner":
+            tinyDesc = "”Can you show me how this was done?”"
+            desc = """
             
-            Um ótimo aliado, porém, muito cuidado, voce nao vai querer ser vítima do Tomate Doido e sua fúria.
-            """
-        
-        case "Fazengumelo":
-            tinyDesc = "”Posso ajudar em algo?”"
-            desc = """
-            Todos que possum um Fazengumelo em sua casa sabem o quão incrivel é a sua ajuda, ele ajuda no jardim, na cozinha e até vai ao mercado!  O ”Gumelo serventis”  produz muito oxigênio atravez das suas explosões de esporos, porém ainda não há informações sobre como isso pode afetar humanos.
-            """
-        
-        case "Cultivanete":
-            tinyDesc = "”Vamos plantar mais!”"
-            desc = """
-            Os Cultivanetes são excelentes agricultores e jardineiros podendo fazer uma horta crescer até 50 vezes mais rápido! Eles amam plantar, fazem isso até mesmo sem ninguém pedir!  A espécie ”Rabanetus Plantae” é a primeira mutação a conseguir cultivar outras plantas mutantes, fazendo a produção de oxigênio ser ainda mais eficaz.
-            """
-        
-        case "Melanprendiz":
-            tinyDesc = "”Pode me mostrar como isso foi feito?”"
-            desc = """
-            Não há nada mais curioso que um Melanprendiz, eles perguntam  e questionam sem parar sempre a procura de mais conhecimento.
+            There is nothing more curious than a Melearner, they ask and question without stopping always looking for more knowledge.
 
-            O ”Studere Melantus” em sua sede infinita por conhecimento aprende o máximo possível sobre tudo, durante esse processo ele libera quantidades monumentais de oxigênio.
+            The “Studere Melantus” in its infinite thirst for knowledge learns as much as possible about everything, during the process it releases monumental amounts of oxygen.
+            
             """
             
-        case "Magibóbora":
-            tinyDesc = "”Gostaria de ver um truque?”"
+        case "Pumpkazam":
+            tinyDesc = "”Would you like to see a trick?”"
             desc = """
-            Precisa de um truque, um encanto ou uma magia? A Magibóbora pode fazer para você! Manipular a realidade de maneira encantadora é o maior prazer dessa mágica planta!
+            
+            Need a trick, a charm or a spell? Pumpkazam can do it for you! Manipulating reality in a charming way is the greatest pleasure of this magical plant!
 
-            A ”Magicae Cucurbita” consegue transformar qualquer coisa em oxigênio, ainda não se sabe os limites dos efeitos anômalos dessa mutação, muito menos como sa2o realizados...
+            The "Magicae Cucurbita" can transform anything into oxygen, the limits of the anomalous effects of this mutation are still unknown, much less how they are carried out...
+            
+            """
+        case "Carrunner":
+            tinyDesc = "”Orange power baby!”"
+            desc = """
+            Possibly the strongest plant the world has ever seen! popularly known as Carrots, the "Cenourus Bombadus" is a master at lifting heavy things. Widely used for manual work, it came to replace cranes and can lift more than 5 tons with one arm! and by the way, she is a great personal trainer...
+            
+                Carrunners exude oxygen during their activities, a little gross, but very good for the environment!
+            """
+        
+        case "Spike":
+            tinyDesc = "”Sting, sting, STING!”"
+            desc = """
+            
+            Spike is the first intelligent cactus. With very little sense of humor, he will throw many truths in your face, because sincerity is his greatest characteristic. But be careful! he gets annoyed very easily, you don't want him to poke you with his sharp thorns...
+
+            Spiky's spikes penetrate any material, even bulletproof ones, but when they hit them, it's release large amounts of oxygen.
+            
+            """
+        
+        case "Rockmush":
+            tinyDesc = "”Let's rock and roll!”"
+            desc = """
+            Mushrooms are back but this time much bolder. Rockmush is angry and rocker, a born musician, writes songs very easily. However, he is not good at dealing with human beings and becomes very angry when thwarted. But he has a great view of society.
+
+            Rockmush's anomalous songs manage to alter the biology of other beings, making them produce oxygen, a creepy music power.
+            """
+        
+        case "Talkdator":
+            tinyDesc = "”Would you like a cookie, sweetie? (Your mother's voice)”"
+            desc = """
+            With two talking heads, this mutation starts to make humans very scared. With an insatiable appetite, the incredible ability to repeat everything that is said to her, perfectly mimicking her voice, the "Predatorius Plantae" eats everything in front of her, so be very careful what you leave in her way...
+
+            Everything eaten by this ferocious plant has its mass converted into oxygen, in the same amount.
+            
+            """
+        
+        case "Carnivore King":
+            tinyDesc = "”Kneel before the king!”"
+            desc = """
+            
+            The Carnivore King is the biggest and most powerful plant ever created among all mutations, it doesn't produce any oxygen, but its power to destroy and subjugate humanity is perfect for one thing... DOMINATION!
+            
             """
         
         default:

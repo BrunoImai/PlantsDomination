@@ -10,6 +10,8 @@ import UIKit
 
 class GameManager{
     
+    var adInScreen = false
+    
     var actualOxygen = 0.0
     var carbonCredits = 0
     
@@ -67,7 +69,7 @@ class GameManager{
         let encodedPlantsDiscovered = try! NSKeyedArchiver.archivedData(withRootObject: plantsDiscovered, requiringSecureCoding: false)
         save(encodedPlantsDiscovered, key: "plantsDiscovered")
         
-        let encodedPlantInScene = try! NSKeyedArchiver.archivedData(withRootObject: gameScene!.plantInScene, requiringSecureCoding: false)
+        let encodedPlantInScene = try! NSKeyedArchiver.archivedData(withRootObject: gameScene?.plantInScene != nil ? gameScene!.plantInScene : []  , requiringSecureCoding: false)
         save(encodedPlantInScene, key: "plantsInScene")
         
         save(plantLimit, key: "plantLimit")
@@ -80,6 +82,10 @@ class GameManager{
         save(shop.farmLimitUpgradeValue, key: "farmLimitUpgradeValue")
         save(shop.seedSpawnUpgradeValue, key: "seedSpawnUpgradeValue")
         
+        let lastTimeInApp = Date()
+        save(lastTimeInApp, key: "lastLaunchTime")
+        
+        print("ultimo oxygenio: ", actualOxygen)
     }
     
 }

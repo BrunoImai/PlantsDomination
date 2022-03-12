@@ -32,11 +32,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 let viewController = storyboard.instantiateViewController(withIdentifier: "Onboarding")
                 self.window?.rootViewController = viewController
                 self.window?.makeKeyAndVisible()
+                GameManager.shared.saveGame()
         }else{
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let viewController = storyboard.instantiateViewController(withIdentifier: "GameViewController")
                 self.window?.rootViewController = viewController
                 self.window?.makeKeyAndVisible()
+            
+            GameManager.shared.saveGame()
         }
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         GameManager.shared.newPlantVC =  storyboard.instantiateViewController(withIdentifier: "popUpNewPlantVC") as? NewPlantPopUpViewController

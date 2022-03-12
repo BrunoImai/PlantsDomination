@@ -85,7 +85,7 @@ class Shop: NSObject {
             
             if GameManager.shared.plantLimit <= 30 {
                 GameManager.shared.plantLimit += 1
-                farmLimitUpgradeCarbonValue = setFarmLimitUpgradeCarbonValue(GameManager.shared.plantLimit)
+                farmLimitUpgradeValue = setFarmLimitUpgradeValue(GameManager.shared.plantLimit)
                 refreshShop()
                 GameManager.shared.gameScene?.playEffect("buy", "wav")
             }

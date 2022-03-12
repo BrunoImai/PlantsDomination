@@ -29,8 +29,13 @@
 		0E6D653427B5908D0034EF4A /* PlantPediaCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0E6D653227B5908D0034EF4A /* PlantPediaCollectionViewCell.xib */; };
 		0E8EFBBB27A9685800466722 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8EFBBA27A9685800466722 /* GameManager.swift */; };
 		0E8EFBBD27A9687B00466722 /* Shop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8EFBBC27A9687B00466722 /* Shop.swift */; };
+		0EA52EA427D7D4DC0013EFB4 /* WorldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA52EA327D7D4DC0013EFB4 /* WorldViewController.swift */; };
+		0EA52EAA27D7DDC00013EFB4 /* World.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EA52EA927D7DDC00013EFB4 /* World.swift */; };
 		0EE0847627BECB7A0030C389 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EE0847527BECB7A0030C389 /* AdSupport.framework */; };
 		0EE0847827BECB870030C389 /* AppTrackingTransparency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EE0847727BECB870030C389 /* AppTrackingTransparency.framework */; };
+		0EE5038B27DBC61E00E36EDD /* SpeedScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 0EE5038A27DBC61E00E36EDD /* SpeedScene.sks */; };
+		0EE5038F27DBC6D600E36EDD /* SpeedScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE5038E27DBC6D600E36EDD /* SpeedScene.swift */; };
+		0EE5039127DBCBF800E36EDD /* SpeedSceneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE5039027DBCBF800E36EDD /* SpeedSceneViewController.swift */; };
 		0EED4C3E27BA97F40054FE04 /* musicFarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0EED4C3D27BA97F40054FE04 /* musicFarm.mp3 */; };
 		0EED4C4027BA9FF50054FE04 /* buy.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0EED4C3F27BA9FF50054FE04 /* buy.wav */; };
 		0EED4C4227BA9FFA0054FE04 /* fuse.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0EED4C4127BA9FFA0054FE04 /* fuse.wav */; };
@@ -65,8 +70,13 @@
 		0E6D653227B5908D0034EF4A /* PlantPediaCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlantPediaCollectionViewCell.xib; sourceTree = "<group>"; };
 		0E8EFBBA27A9685800466722 /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
 		0E8EFBBC27A9687B00466722 /* Shop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shop.swift; sourceTree = "<group>"; };
+		0EA52EA327D7D4DC0013EFB4 /* WorldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldViewController.swift; sourceTree = "<group>"; };
+		0EA52EA927D7DDC00013EFB4 /* World.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = World.swift; sourceTree = "<group>"; };
 		0EE0847527BECB7A0030C389 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		0EE0847727BECB870030C389 /* AppTrackingTransparency.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppTrackingTransparency.framework; path = System/Library/Frameworks/AppTrackingTransparency.framework; sourceTree = SDKROOT; };
+		0EE5038A27DBC61E00E36EDD /* SpeedScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SpeedScene.sks; sourceTree = "<group>"; };
+		0EE5038E27DBC6D600E36EDD /* SpeedScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedScene.swift; sourceTree = "<group>"; };
+		0EE5039027DBCBF800E36EDD /* SpeedSceneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedSceneViewController.swift; sourceTree = "<group>"; };
 		0EED4C3D27BA97F40054FE04 /* musicFarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = musicFarm.mp3; sourceTree = "<group>"; };
 		0EED4C3F27BA9FF50054FE04 /* buy.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = buy.wav; sourceTree = "<group>"; };
 		0EED4C4127BA9FFA0054FE04 /* fuse.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = fuse.wav; sourceTree = "<group>"; };
@@ -131,9 +141,8 @@
 		0E3D0BE227A206BE00266507 /* Gamelogic */ = {
 			isa = PBXGroup;
 			children = (
-				0E3D0BE327A206BE00266507 /* AppDelegate.swift */,
 				0E8EFBBA27A9685800466722 /* GameManager.swift */,
-				0E3D0BE927A206BF00266507 /* GameScene.swift */,
+				0E3D0BE327A206BE00266507 /* AppDelegate.swift */,
 				0E3D0C1D27A42E1E00266507 /* Plant.swift */,
 				0E8EFBBC27A9687B00466722 /* Shop.swift */,
 			);
@@ -154,6 +163,8 @@
 				0E535C6B27C6A6D200919D18 /* PediaPopUpViewController.swift */,
 				0E535C6D27C6AD9100919D18 /* NewPlantPopUpViewController.swift */,
 				0EF4456E27CFAF100008480B /* limitPlantsViewController.swift */,
+				0EA52EA327D7D4DC0013EFB4 /* WorldViewController.swift */,
+				0EE5039027DBCBF800E36EDD /* SpeedSceneViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -162,6 +173,9 @@
 			isa = PBXGroup;
 			children = (
 				0E3D0BE527A206BF00266507 /* GameScene.sks */,
+				0E3D0BE927A206BF00266507 /* GameScene.swift */,
+				0EE5038A27DBC61E00E36EDD /* SpeedScene.sks */,
+				0EE5038E27DBC6D600E36EDD /* SpeedScene.swift */,
 				0E3D0BE727A206BF00266507 /* Actions.sks */,
 			);
 			path = Scenes;
@@ -174,6 +188,7 @@
 				0EED4C3F27BA9FF50054FE04 /* buy.wav */,
 				0EED4C4127BA9FFA0054FE04 /* fuse.wav */,
 				0E3D0BF027A206C000266507 /* Assets.xcassets */,
+				0EA52EA927D7DDC00013EFB4 /* World.swift */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -264,6 +279,7 @@
 				0EED4C3E27BA97F40054FE04 /* musicFarm.mp3 in Resources */,
 				0EED4C4027BA9FF50054FE04 /* buy.wav in Resources */,
 				0E3D0BF127A206C000266507 /* Assets.xcassets in Resources */,
+				0EE5038B27DBC61E00E36EDD /* SpeedScene.sks in Resources */,
 				0E535C7027C9484100919D18 /* GoogleService-Info.plist in Resources */,
 				0EED4C4227BA9FFA0054FE04 /* fuse.wav in Resources */,
 				0E6D653427B5908D0034EF4A /* PlantPediaCollectionViewCell.xib in Resources */,
@@ -343,6 +359,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E3D0BEA27A206BF00266507 /* GameScene.swift in Sources */,
+				0EA52EAA27D7DDC00013EFB4 /* World.swift in Sources */,
 				0E535C6A27C6615400919D18 /* ShopPopUpViewController.swift in Sources */,
 				0E535C6E27C6AD9100919D18 /* NewPlantPopUpViewController.swift in Sources */,
 				0E08B06F27AC6F630059A4B9 /* plantCollectionViewCell.swift in Sources */,
@@ -353,9 +370,12 @@
 				0EF4456F27CFAF100008480B /* limitPlantsViewController.swift in Sources */,
 				0E8EFBBD27A9687B00466722 /* Shop.swift in Sources */,
 				0E3D0BEC27A206BF00266507 /* GameViewController.swift in Sources */,
+				0EE5039127DBCBF800E36EDD /* SpeedSceneViewController.swift in Sources */,
+				0EA52EA427D7D4DC0013EFB4 /* WorldViewController.swift in Sources */,
 				0E6D653327B5908D0034EF4A /* PlantPediaCollectionViewCell.swift in Sources */,
 				0B28C56427B59DFC00293048 /* OnboardingCollectionViewCell.swift in Sources */,
 				0B28C56027B598D500293048 /* OnboardingSlide.swift in Sources */,
+				0EE5038F27DBC6D600E36EDD /* SpeedScene.swift in Sources */,
 				0E3D0BE427A206BE00266507 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

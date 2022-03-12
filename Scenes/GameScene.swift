@@ -46,22 +46,7 @@ class GameScene: SKScene {
                 SKAction.wait(forDuration: 1)
             ])
         ))
-        
-        if defaults.bool(forKey: "First Launch happend") == true {
-            print("Segundo uso")
-            
-            loadGame()
-            
-        } else {
-            GameManager.shared.save(true, key: "First Launch happend")
-            print("Primeiro uso")
 
-        }
-        
-//        if let musicURL = Bundle.main.url(forResource: "musicFarm", withExtension: "mp3") {
-//            backgroundMusic = SKAudioNode(url: musicURL)
-//            addChild(backgroundMusic)
-//        }
     }
     
     func touchDown(atPoint pos : CGPoint) {
@@ -69,7 +54,7 @@ class GameScene: SKScene {
     }
     
     func touchMoved(toPoint pos : CGPoint) {
-        let maxYtouch = (gameVC?.oxygenNumberLabel.frame.maxY)! + (gameVC?.view.frame.height)!/2 - 45
+        let maxYtouch = (gameVC?.oxygenNumberLabel.frame.maxY)! + (gameVC?.view.frame.height)!/2 - 140
 
         if pos.y < maxYtouch {
             if currentNode != nil && currentNode!.name != "seed" && currentNode!.name != "background"  {
@@ -176,7 +161,7 @@ class GameScene: SKScene {
     func spawnFromSeed(_ seed: SKNode) {
         if  plantInScene.count <= GameManager.shared.plantLimit {
 
-            let plant = Plant(name: "Brotinho", oxygeProduction: 0.9)
+            let plant = Plant(name: "Carrunner", oxygeProduction: 0.9)
             
             plant.node.position = seed.position
             plant.setDesc()
@@ -261,34 +246,49 @@ class GameScene: SKScene {
         switch plantName {
             
             case "seed":
-                return "Brotinho"
+                return "Sprouty"
             
-            case "Brotinho":
-                return "Brotervilha"
+            case "Sprouty":
+                return "Happea"
             
-            case "Brotervilha":
-                return "Florervilha"
+            case "Happea":
+                return "Bloom"
             
-            case "Florervilha":
-                return "Plantapet"
+            case "Bloom":
+                return "Puppea"
             
-            case "Plantapet":
-                return "Mangandante"
+            case "Puppea":
+                return "Manguspeaker"
             
-            case "Mangandante":
-                return "Doidomate"
+            case "Manguspeaker":
+                return "Madmato"
             
-            case "Doidomate":
-                return "Fazengumelo"
+            case "Madmato":
+                return "Farmushroom"
             
-            case "Fazengumelo":
-                return "Cultivanete"
+            case "Farmushroom":
+                return "Farmeradish"
             
-            case "Cultivanete":
-                return "Melanprendiz"
+            case "Farmeradish":
+                return "Melearner"
             
-            case "Melanprendiz":
-                return "Magibóbora"
+            case "Melearner":
+                return "Pumpkazam"
+            
+            case "Pumpkazam":
+                return "Carrunner"
+            
+            case "Carrunner":
+                return "Spike"
+            
+            case "Spike":
+                return "Rockmush"
+            
+            case "Rockmush":
+                return "Talkdator"
+            
+            case "Talkdator":
+                return "Carnivore King"
             
             default:
                 return "erro"
@@ -332,8 +332,7 @@ class GameScene: SKScene {
     }
     
     func loadGame() {
-        
-        GameManager.shared.actualOxygen = defaults.object(forKey:"actualOxygen") as! Double
+    
         GameManager.shared.carbonCredits = defaults.object(forKey:"carbonCredits") as! Int
         
         let decodedPlantsDiscovered = defaults.data(forKey: "plantsDiscovered")
@@ -361,7 +360,28 @@ class GameScene: SKScene {
             plant.setDesc()
         }
         
+        offlineOxygenProduced()
     }
+    
+    func offlineOxygenProduced() {
+        let oldOxygen = defaults.object(forKey:"actualOxygen") as! Double
+        
+        let lastLaunchTime = defaults.object(forKey:"lastLaunchTime") as! Date
+        
+        let currentDate = Date()
+        
+        var averageOxygenProduced = 0.0
+        for plant in plantInScene {
+            averageOxygenProduced += plant.oxygenProduction
+        }
+        
+        if let difference = Calendar.current.dateComponents([.second], from: lastLaunchTime, to: currentDate).second {
+
+            GameManager.shared.actualOxygen = (averageOxygenProduced * Double(difference)) + oldOxygen
+        }
+        print("Novo oxygenio: ", GameManager.shared.actualOxygen)
+    }
+    
 }
 
 func formatNumber(_ numberToformat : Double) -> String {

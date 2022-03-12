@@ -7,11 +7,14 @@
 
 import UIKit
 import SpriteKit
-import GameplayKit
+import GameKit
 import GoogleMobileAds
 
-class GameViewController: UIViewController {
+class GameViewController: UIViewController, GKGameCenterControllerDelegate {
 
+
+    @IBOutlet weak var offset: UIView!
+    @IBOutlet weak var adViewContainer: UIView!
     @IBOutlet weak var adButton: UIButton!
     
     var currentGame: GameScene!
@@ -23,6 +26,8 @@ class GameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        authenticateLocalPlayer()
        
         loadRewardAd()
         if let view = self.view as! SKView? {
@@ -71,6 +76,26 @@ class GameViewController: UIViewController {
     
     var adInScreen = true
     
+    @IBAction func showAd(_ sender: Any) {
+        presentRewardedAd()
+        adViewContainer.isHidden = true
+        adViewContainer.isUserInteractionEnabled = false
+        offset.isHidden = true
+    }
+    
+    @IBAction func showAdPopUp(_ sender: Any) {
+        adViewContainer.isHidden = false
+        adViewContainer.isUserInteractionEnabled = true
+        adButton.isHidden = true
+        offset.isHidden = false
+    }
+    
+    @IBAction func closeAdPopUp(_ sender: Any) {
+        adViewContainer.isHidden = true
+        adViewContainer.isUserInteractionEnabled = false
+        adButton.isHidden = false
+        offset.isHidden = true
+    }
     func loadRewardAd() {
         let request = GADRequest()
         GADRewardedAd.load(withAdUnitID: "ca-app-pub-2003885569288303/9199244739", request: request) { ad, error in
@@ -84,8 +109,6 @@ class GameViewController: UIViewController {
         }
     }
     
-
-    
     @objc func showAdButton() {
         if !adInScreen {
             adButton.isHidden = false
@@ -95,17 +118,79 @@ class GameViewController: UIViewController {
         
     }
 
-    @IBAction func teste(_ sender: Any) {
-        presentRewardedAd()
-        
+    @IBAction func showSpeedMinigame(_ sender: Any) {
+//        let scene = SpeedScene(fileNamed: "SpeedScene")!
+//        let transition = SKTransition.moveIn(with: .right, duration: 1)
+//        currentGame.view?.presentScene(scene, transition: transition)
     }
+    
+    //MARK: GAMECENTER
+    
+    var gcEnabled = Bool() // Check if the user has Game Center enabled
+    var gcDefaultLeaderBoard = String() // Check the default leaderboardID
+    func authenticateLocalPlayer() {
+        let localPlayer: GKLocalPlayer = GKLocalPlayer.local
+
+        localPlayer.authenticateHandler = {(ViewController, error) -> Void in
+            if ((ViewController) != nil) {
+                // Show game center login if player is not logged in
+                self.present(ViewController!, animated: true, completion: nil)
+            }
+            else if (localPlayer.isAuthenticated) {
+                
+                // Player is already authenticated and logged in
+                self.gcEnabled = true
+                
+                localPlayer.setDefaultLeaderboardIdentifier("speedMiniGameLeaderBoard", completionHandler: { ( error) in
+                    if error != nil {
+                        print(error!)
+                        print("DEU RUIMMMMMMMMMMMMMMMMMMM")
+                    }
+                    else {
+                        print("DEU BOMMMMMMMMMMMMMM")
+            
+                    }
+                })
+                
+                // Get the default leaderboard ID
+                localPlayer.loadDefaultLeaderboardIdentifier(completionHandler: { (leaderboardIdentifer, error) in
+                    if error != nil {
+                        print(error!)
+                        print(leaderboardIdentifer, "DEU RUIMMMMMMMMMMMMMMMMMMM")
+                    }
+                    else {
+                        print(leaderboardIdentifer, "DEU BOMMMMMMMMMMMMMM")
+                        self.gcDefaultLeaderBoard = leaderboardIdentifer!
+                    }
+                 })
+                
+            }
+            else {
+                // Game center is not enabled on the user's device
+                self.gcEnabled = false
+                print("Local player could not be authenticated!")
+                print(error!)
+            }
+        }
+    }
+    @IBAction func showLeaderBoard(_ sender: Any) {
+        let GameCenterVC = GKGameCenterViewController(leaderboardID: self.gcDefaultLeaderBoard, playerScope: .global, timeScope: .allTime)
+            GameCenterVC.gameCenterDelegate = self
+            present(GameCenterVC, animated: true, completion: nil)
+    }
+    
+    func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
+        gameCenterViewController.dismiss(animated:true)
+    }
+    
+    
 }
 
 extension GameViewController : GADFullScreenContentDelegate {
     
     func ad(_ ad: GADFullScreenPresentingAd, didFailToPresentFullScreenContentWithError error: Error) {
         print("Erro ao apresentar em fullscreen: ", error)
-        showToast(message: "Erro ao apresentar AD", font: .systemFont(ofSize: 12))
+        showToast(message: "Error in AD presentation", font: .systemFont(ofSize: 12))
         loadRewardAd()
     }
     
@@ -128,10 +213,10 @@ extension GameViewController : GADFullScreenContentDelegate {
             ad.present(fromRootViewController: self) {
                 //MARK: FAZER A LOGICA AQ
                 GameManager.shared.carbonCredits += 10
+                self.showToast(message: "10 Carbon credit added!", font: .systemFont(ofSize: 12))
             }
         }
     }
-    
 }
 
 extension UIViewController {

@@ -16,8 +16,6 @@ class PediaPopUpViewController: UIViewController {
             
             pediaCollectionView.dataSource = self
             pediaCollectionView.delegate = self
-            
-           
         }
     }
     
