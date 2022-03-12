@@ -161,7 +161,7 @@ class GameScene: SKScene {
     func spawnFromSeed(_ seed: SKNode) {
         if  plantInScene.count <= GameManager.shared.plantLimit {
 
-            let plant = Plant(name: "Carrunner", oxygeProduction: 0.9)
+            let plant = Plant(name: "Sprouty", oxygeProduction: 0.9)
             
             plant.node.position = seed.position
             plant.setDesc()
