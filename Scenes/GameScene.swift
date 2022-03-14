@@ -33,6 +33,9 @@ class GameScene: SKScene {
         background?.zPosition = -1000000000
         
         GameManager.shared.gameScene = self
+        
+        loadGame()
+        
         run(SKAction.repeatForever(
             SKAction.sequence([
                 SKAction.run(seedSpawn),
